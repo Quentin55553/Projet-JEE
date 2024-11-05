@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="ProjetJEE:war exploded" />
+      <artifact name="Projet-JEE-Principale:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -14,6 +14,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -29,9 +36,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2oRkhx2I8AjycTFSRkqPtv3KczS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,63 +50,31 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 10.1.291.executor": "Run",
+    "Tomcat Server.index.jsp.executor": "Run",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Quent/Documents/ProjetJEE/docs",
+    "last_opened_file_path": "C:/Users/Quent/Downloads/Projet-JEE-Principale/src/main/java/org/jee/UserInput",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "shared-indexes",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.21491228",
+    "project.structure.side.proportion": "0.28978008",
+    "settings.editor.selected.configurable": "preferences.applicationServers",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Quent\Downloads\Projet-JEE-Principale\src\main\java\org\jee\UserInput" />
       <recent name="C:\Users\Quent\Documents\ProjetJEE\docs" />
       <recent name="C:\Users\Quent\Documents\ProjetJEE" />
       <recent name="C:\Users\Quent\Documents\ProjetJEE\src\main\java\org\jee" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Tomcat 10.1.291" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.291" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment>
-        <artifact name="ProjetJEE:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/ProjetJEE_war_exploded" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="664f3475-6087-44e8-9283-66939c61b817" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="ProjetJEE:war exploded" />
-        </option>
-      </method>
-    </configuration>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.jee.UserInput" />
+    </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -118,6 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730839901716</updated>
       <workItem from="1730839902784" duration="1322000" />
+      <workItem from="1730841519397" duration="3644000" />
     </task>
     <servers />
   </component>

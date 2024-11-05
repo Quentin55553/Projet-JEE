@@ -1,4 +1,4 @@
-package org.jee.UserInput;
+package org.jee.Servlets;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
