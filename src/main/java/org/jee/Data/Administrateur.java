@@ -1,4 +1,4 @@
-package org.example.projettmp;
+package org.jee.Data;
 
 
 public class Administrateur extends Personne {

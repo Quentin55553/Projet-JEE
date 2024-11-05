@@ -1,4 +1,4 @@
-package org.example.projettmp;
+package org.jee.UserInput;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
