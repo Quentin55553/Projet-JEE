@@ -23,11 +23,7 @@ public class Etudiant extends Personne {
     }
 
     @Override
-    public void afficherDetails() {
-        System.out.println("Étudiant");
-        System.out.println("Prénom : " + this.getPrenom());
-        System.out.println("Nom : " + this.getNom());
-        System.out.println("Date de naissance : " + this.getDateNaissance());
-        System.out.println("Email : " + this.getMail());
+    public String afficherDetails() {
+        return "ÉTUDIANT\n" + super.afficherDetails();
     }
 }

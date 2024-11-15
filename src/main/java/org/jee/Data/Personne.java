@@ -16,6 +16,16 @@ public abstract class Personne {
         this.dateNaissance = dateNaissance;
     }
 
+
+    public String afficherDetails() {
+        String resultat = "";
+        resultat += "Prénom : " + this.prenom + "\n";
+        resultat += "Nom : " + this.nom + "\n";
+        resultat += "Date de naissance : " + this.dateNaissance + "\n";
+        resultat += "Email : " + this.mail + "\n";
+        return resultat;
+    };
+
     public String getMail() {
         return mail;
     }
@@ -63,6 +73,4 @@ public abstract class Personne {
     public void setRole(int role) {
         this.role = role;
     }
-
-    public abstract void afficherDetails();
 }

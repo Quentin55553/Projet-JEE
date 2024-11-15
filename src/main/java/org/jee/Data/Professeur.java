@@ -8,7 +8,7 @@ public class Professeur extends Personne {
 
 
     @Override
-    public void afficherDetails() {
-        // A redéfinir
+    public String afficherDetails() {
+        return "PROFESSEUR\n" + super.afficherDetails();
     }
 }

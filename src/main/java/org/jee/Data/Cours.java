@@ -1,5 +1,7 @@
 package org.jee.Data;
 
+import java.util.Objects;
+
 
 public class Cours {
     private Professeur professeur;
@@ -13,6 +15,30 @@ public class Cours {
         this.matiere   = matiere;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
+    }
+
+    @Override
+    public String toString() {
+        String resultat = "COURS\n";
+        resultat += "Professeur : " + professeur + "\n";
+        resultat += "Matière : " + matiere + "\n";
+        resultat += "Date de début : " + dateDebut + "\n";
+        resultat += "Date de fin : " + dateFin + "\n";
+        return resultat;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Cours cours = (Cours) obj;
+        return Objects.equals(professeur, cours.professeur) && Objects.equals(matiere, cours.matiere) && Objects.equals(dateDebut, cours.dateDebut) && Objects.equals(dateFin, cours.dateFin);
     }
 
     public Professeur getProfesseur() {
