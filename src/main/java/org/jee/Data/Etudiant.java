@@ -6,9 +6,28 @@ public class Etudiant extends Personne {
         super(nom, prenom, dateNaissance, contact);
     }
 
+    public void updatePrenom(String prenom) {
+        this.setNom(prenom);
+    }
+
+    public void updateNom(String nom) {
+        this.setNom(nom);
+    }
+
+    public void updateDateDeNaissance(String dateNaissance) {
+        this.setDateNaissance(dateNaissance);
+    }
+
+    public void updateEmail(String email) {
+        this.setMail(email);
+    }
 
     @Override
     public void afficherDetails() {
-        // A redéfinir
+        System.out.println("Étudiant");
+        System.out.println("Prénom : " + this.getPrenom());
+        System.out.println("Nom : " + this.getNom());
+        System.out.println("Date de naissance : " + this.getDateNaissance());
+        System.out.println("Email : " + this.getMail());
     }
 }

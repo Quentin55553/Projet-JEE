@@ -15,6 +15,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -29,9 +37,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2okL77hKRLl3BxAedsPqdk9HKQo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,11 +51,24 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 10.1.29.executor": "Run",
+    "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Quent/Music/Projet-JEE-Principale",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.21491228",
+    "project.structure.side.proportion": "0.28978008",
     "settings.editor.selected.configurable": "shared-indexes",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -115,6 +136,8 @@
       <option name="presentableId" value="Default" />
       <updated>1731408458715</updated>
       <workItem from="1731408459820" duration="193000" />
+      <workItem from="1731656187071" duration="1352000" />
+      <workItem from="1731657934798" duration="2322000" />
     </task>
     <servers />
   </component>
