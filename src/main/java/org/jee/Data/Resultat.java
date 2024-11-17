@@ -2,32 +2,47 @@ package org.jee.Data;
 
 
 public class Resultat {
-    private Etudiant etudiant;
-    private Cours cours;
+    private int id;
+    private int idEtudiant;
+    private int idCours;
     private float note;
 
 
-    public Resultat(Etudiant etudiant, Cours cours, float note) {
-        this.etudiant = etudiant;
-        this.cours = cours;
+    public Resultat(int id, int idEtudiant, int idCours, float note) {
+        this.id = id;
+        this.idEtudiant = idEtudiant;
+        this.idCours = idCours;
         this.note = note;
     }
 
-    public Etudiant getEtudiant() {
-        return etudiant;
+
+    // Getters et setters
+    public int getId() {
+        return id;
     }
 
-    public void setEtudiant(Etudiant etudiant) {
-        this.etudiant = etudiant;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Cours getCours() {
-        return cours;
+
+    public int getIdEtudiant() {
+        return idEtudiant;
     }
 
-    public void setCours(Cours cours) {
-        this.cours = cours;
+    public void setIdEtudiant(int idEtudiant) {
+        this.idEtudiant = idEtudiant;
     }
+
+
+    public int getIdCours() {
+        return idCours;
+    }
+
+    public void setIdCours(int idCours) {
+        this.idCours = idCours;
+    }
+
 
     public float getNote() {
         return note;

@@ -4,28 +4,28 @@ import java.util.Objects;
 
 
 public class Cours {
-    private Professeur professeur;
-    private String matiere;
-    private String dateDebut;
-    private String dateFin;
+    private int id;
+    private int idProfesseur;
+    private String nom;
+    private String description;
 
 
-    public Cours(Professeur professeur, String matiere, String dateDebut, String dateFin) {
-        this.professeur = professeur;
-        this.matiere   = matiere;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
+    public Cours(int id, int idProfesseur, String nom, String description) {
+        this.id = id;
+        this.idProfesseur = idProfesseur;
+        this.nom = nom;
+        this.description = description;
     }
+
 
     @Override
     public String toString() {
         String resultat = "COURS\n";
-        resultat += "Professeur : " + professeur + "\n";
-        resultat += "Matière : " + matiere + "\n";
-        resultat += "Date de début : " + dateDebut + "\n";
-        resultat += "Date de fin : " + dateFin + "\n";
+        resultat += "Professeur : " + idProfesseur + "\n";
+        resultat += "Matière : " + nom + "\n";
         return resultat;
     }
+
 
     @Override
     public boolean equals(Object obj) {
@@ -38,38 +38,43 @@ public class Cours {
         }
 
         Cours cours = (Cours) obj;
-        return Objects.equals(professeur, cours.professeur) && Objects.equals(matiere, cours.matiere) && Objects.equals(dateDebut, cours.dateDebut) && Objects.equals(dateFin, cours.dateFin);
+        return Objects.equals(idProfesseur, cours.idProfesseur) && Objects.equals(nom, cours.nom);
     }
 
-    public Professeur getProfesseur() {
-        return professeur;
+
+    // Getters et setters
+    public int getId() {
+        return id;
     }
 
-    public void setProfesseur(Professeur professeur) {
-        this.professeur = professeur;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getMatiere() {
-        return matiere;
+
+    public int getIdProfesseur() {
+        return idProfesseur;
     }
 
-    public void setMatiere(String matiere) {
-        this.matiere = matiere;
+    public void setIdProfesseur(int idProfesseur) {
+        this.idProfesseur = idProfesseur;
     }
 
-    public String getDateDebut() {
-        return dateDebut;
+
+    public String getNom() {
+        return nom;
     }
 
-    public void setDateDebut(String dateDebut) {
-        this.dateDebut = dateDebut;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public String getDateFin() {
-        return dateFin;
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setDateFin(String dateFin) {
-        this.dateFin = dateFin;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

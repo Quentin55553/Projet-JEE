@@ -1,24 +1,89 @@
 package org.jee.Data;
 
-import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
-
 
 public class Inscription {
-    //consultation des cours auxquels un étudiant est inscrit //
-    private Map<Etudiant, List<Cours>> inscription; //association de chaque étudiant à un liste de cours//
+    private int id;
+    private int idEtudiant;
+    private int idCours;
+    private String date;
+
+
+    public Inscription(int id, int idEtudiant, int idCours, String date) {
+        this.id = id;
+        this.idEtudiant = idEtudiant;
+        this.idCours = idCours;
+        this.date = date;
+    }
+
+
+    // Getters et setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public int getIdEtudiant() {
+        return idEtudiant;
+    }
+
+    public void setIdEtudiant(int idEtudiant) {
+        this.idEtudiant = idEtudiant;
+    }
+
+
+    public int getIdCours() {
+        return idCours;
+    }
+
+    public void setIdCours(int idCours) {
+        this.idCours = idCours;
+    }
+
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    /*
+     //consultation des cours auxquels un étudiant est inscrit
+    private Map<Etudiant, List<Cours>> inscriptions; //association de chaque étudiant à un liste de cours
 
 
     public Inscription() {
-        this.inscription = new HashMap<>();
+        this.inscriptions = new HashMap<>();
     }
 
-    public void inscrire(Etudiant etudiant, Cours cours) {// inscription des étudiants à un cours//
-        inscriptions.puIfAbsent(etudiant, new Arraylist<>()); // Initialise la liste si l'étudiant n'ets pas encore inscrit le putIfabsent est une méthode integré à class hashmap de java 
-        List<Cours> coursInscrits = inscriptions.get(etudiant); // avoir accès à la liste des cours de l'étudiant 
 
-        if (coursInscrits.contains(cours)) { // permet de vérifier si l'étudiant est déjà inscrit à ce cours// 
+    public void inscrire(Etudiant etudiant, Cours cours) { // incrire un étudiant à un cours
+        inscriptions.computeIfAbsent(etudiant, k -> new ArrayList<>()).add(cours);
+    }
+
+
+    public void afficherInscriptions(Etudiant etudiant) {
+        List<Cours> coursList = inscriptions.get(etudiant);
+
+        if (coursList != null) {
+            coursList.forEach(System.out::println);
+
+        } else {
+            System.out.println("L'étudiant n'est inscrit à aucun cours.");
+        }
+    }
+
+
+    public void inscrire(Etudiant etudiant, Cours cours) {// inscription des étudiants à un cours//
+        inscriptions.puIfAbsent(etudiant, new Arraylist<>()); // Initialise la liste si l'étudiant n'ets pas encore inscrit le putIfabsent est une méthode integré à class hashmap de java
+        List<Cours> coursInscrits = inscriptions.get(etudiant); // avoir accès à la liste des cours de l'étudiant
+
+        if (coursInscrits.contains(cours)) { // permet de vérifier si l'étudiant est déjà inscrit à ce cours//
             System.out.println("L'étudiant " + etudiant.getNom() + " est déjà inscrit au cours " + cours.getMatiere());
         } else { // Ajoute le cours à la liste des inscriptions de l'étudiant//
             coursInscrits.add(cours);
@@ -46,6 +111,5 @@ public class Inscription {
             }
         }
     }
+     */
 }
-
-    }

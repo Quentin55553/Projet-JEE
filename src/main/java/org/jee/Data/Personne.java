@@ -2,18 +2,23 @@ package org.jee.Data;
 
 
 public abstract class Personne {
-    private String mail;
-    private String password;
+    private int id;
     private String nom;
     private String prenom;
     private String dateNaissance;
-    private int role; // 1-étudiant, 2-Proffeseur, 3-admin
+    private String mail;
+    private String mdp;
+    private int role; // 1 : Étudiant, 2 : Professeur, 3 : Administrateur
 
 
-    public Personne(String nom, String prenom, String dateNaissance, String contact) {
+    public Personne(int id, String nom, String prenom, String dateNaissance, String contact, String mdp, int role) {
+        this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
+        this.mail = contact;
+        this.mdp = mdp; // VOIR POUR CHIFFREMENT
+        this.role = role;
     }
 
 
@@ -24,15 +29,18 @@ public abstract class Personne {
         resultat += "Date de naissance : " + this.dateNaissance + "\n";
         resultat += "Email : " + this.mail + "\n";
         return resultat;
-    };
-
-    public String getMail() {
-        return mail;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+
+    // Getters et setters
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public String getNom() {
         return nom;
@@ -42,6 +50,7 @@ public abstract class Personne {
         this.nom = nom;
     }
 
+
     public String getPrenom() {
         return prenom;
     }
@@ -50,13 +59,6 @@ public abstract class Personne {
         this.prenom = prenom;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getDateNaissance() {
         return dateNaissance;
@@ -65,6 +67,25 @@ public abstract class Personne {
     public void setDateNaissance(String dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
+
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
+
 
     public int getRole() {
         return role;
