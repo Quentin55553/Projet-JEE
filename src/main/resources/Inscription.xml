@@ -1,31 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
-                 version="3.0">
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
 
-    <entity class="org.jee.Data.Inscription">
-        <table name="inscription" schema="gestion_scolarite" catalog=""/>
-        <attributes>
-            <id name="id">
-                <column name="id_inscription"/>
-            </id>
-            <basic name="idEtudiant">
-                <column name="id_etudiant"/>
-            </basic>
-            <basic name="idCours">
-                <column name="id_cours"/>
-            </basic>
-            <basic name="date">
-                <column name="date_inscription"/>
-            </basic>
-            <basic name="etat">
-                <column name="etat"/>
-            </basic>
-            <many-to-one name="personneByIdEtudiant" optional="true" target-entity="org.jee.Data.Personne">
-                <join-column name="id_etudiant" nullable="false" referenced-column-name="id_personne"/>
-            </many-to-one>
-            <many-to-one name="coursByIdCours" optional="true" target-entity="org.jee.Data.Cours">
-                <join-column name="id_cours" nullable="false" referenced-column-name="id_cours"/>
-            </many-to-one>
-        </attributes>
-    </entity>
-</entity-mappings>
+    <class name="org.jee.entity.Inscription" table="Inscription" schema="gestion_scolarite">
+        <id name="idInscription" column="id_inscription"/>
+        <property name="dateInscription" column="date_inscription"/>
+        <property name="etat" column="etat"/>
+        <property name="descriptionRefus" column="description_refus"/>
+        <property name="idEtudiant" column="id_etudiant"/>
+    </class>
+</hibernate-mapping>

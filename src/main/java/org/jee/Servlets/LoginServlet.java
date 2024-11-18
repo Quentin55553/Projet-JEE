@@ -1,31 +1,28 @@
-package org.jee.Controllers;
+package org.jee.Servlets;
 
+import org.jee.Util.HibernateUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
 import org.hibernate.Session;
 import org.hibernate.query.Query;
-
-import org.jee.Data.Personne;
-import org.jee.Util.HibernateUtil;
+import org.jee.entity.Personne;
 
 import java.io.IOException;
 
-
-@WebServlet("/login_")
-public class Authentification extends HttpServlet {
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idPersonne = request.getParameter("idPersonne");
         String password = request.getParameter("password");
 
         // Vérifier les informations d'identification via Hibernate
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Query query = session.createQuery("FROM Personne WHERE idPersonne = :idPersonne AND contact = :password");
+        Session session = org.jee.Util.HibernateUtil.getSessionFactory().openSession();
+        Query query = session.createQuery("FROM Personne WHERE idPersonne = :idPersonne AND password = :password");
         query.setParameter("idPersonne", idPersonne);
         query.setParameter("password", password);
 
@@ -40,10 +37,10 @@ public class Authentification extends HttpServlet {
 
             // Redirige vers la page d'accueil
             response.sendRedirect("home.jsp");
-
         } else {
             // Authentification échouée
             response.sendRedirect("login.jsp?error=true");
         }
     }
+
 }

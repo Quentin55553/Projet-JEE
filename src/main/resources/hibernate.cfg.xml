@@ -10,13 +10,12 @@
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">validate</property>
 
         <!-- Mappings d'entités -->
-        <mapping class="org.jee.Data.Personne"/>
-        <mapping class="org.jee.Data.Cours"/>
-        <mapping class="org.jee.Data.Inscription"/>
-        <mapping class="org.jee.Data.Resultat"/>
-        <!-- Autres propriétés si nécessaire -->
+        <mapping class="org.jee.entity.Personne"/>
+        <mapping class="org.jee.entity.Cours"/>
+        <mapping class="org.jee.entity.Inscription"/>
+        <mapping class="org.jee.entity.Resultat"/>
     </session-factory>
 </hibernate-configuration>

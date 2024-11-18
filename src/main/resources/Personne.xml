@@ -1,32 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
-                 version="3.0">
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
 
-    <entity class="org.jee.Data.Personne">
-        <table name="personne" schema="gestion_scolarite" catalog=""/>
-        <attributes>
-            <id name="id">
-                <column name="id_personne"/>
-            </id>
-            <basic name="nom">
-                <column name="nom"/>
-            </basic>
-            <basic name="prenom">
-                <column name="prenom"/>
-            </basic>
-            <basic name="dateNaissance">
-                <column name="date_naissance"/>
-            </basic>
-            <basic name="mail">
-                <column name="contact"/>
-            </basic>
-            <basic name="role">
-                <column name="role"/>
-            </basic>
-            <one-to-many name="coursByIdPersonne" mapped-by="personneByIdEnseignant" target-entity="org.jee.Data.Cours"/>
-            <one-to-many name="inscriptionsByIdPersonne" mapped-by="personneByIdEtudiant"
-                         target-entity="org.jee.Data.Inscription"/>
-            <one-to-many name="resultatsByIdPersonne" mapped-by="personneByIdEtudiant" target-entity="org.jee.Data.Resultat"/>
-        </attributes>
-    </entity>
-</entity-mappings>
+    <class name="org.jee.entity.Personne" table="Personne" schema="gestion_scolarite">
+        <id name="idPersonne" column="id_personne"/>
+        <property name="nom" column="nom"/>
+        <property name="prenom" column="prenom"/>
+        <property name="dateNaissance" column="date_naissance"/>
+        <property name="contact" column="contact"/>
+        <property name="role" column="role"/>
+        <property name="password" column="password"/>
+        <set name="coursByIdPersonne" inverse="true">
+            <key>
+                <column name="id_enseignant" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="org.jee.entity.Cours"/>
+        </set>
+        <set name="inscriptionsByIdPersonne" inverse="true">
+            <key>
+                <column name="id_etudiant" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="org.jee.entity.Inscription"/>
+        </set>
+    </class>
+</hibernate-mapping>
