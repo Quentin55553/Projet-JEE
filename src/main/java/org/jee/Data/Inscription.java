@@ -5,6 +5,7 @@ public class Inscription {
     private int id;
     private int idEtudiant;
     private int idCours;
+    private int etat;
     private String date;
 
 
@@ -41,6 +42,15 @@ public class Inscription {
 
     public void setIdCours(int idCours) {
         this.idCours = idCours;
+    }
+
+
+    public int getEtat() {
+        return etat;
+    }
+
+    public void setEtat(int etat) {
+        this.etat = etat;
     }
 
 

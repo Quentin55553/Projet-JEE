@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="org.jee.Data.Resultat">
+        <table name="resultat" schema="gestion_scolarite" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="id_resultat"/>
+            </id>
+            <basic name="idEtudiant">
+                <column name="id_etudiant"/>
+            </basic>
+            <basic name="idCours">
+                <column name="id_cours"/>
+            </basic>
+            <basic name="note">
+                <column name="note"/>
+            </basic>
+            <many-to-one name="personneByIdEtudiant" optional="true" target-entity="org.jee.Data.Personne">
+                <join-column name="id_etudiant" nullable="false" referenced-column-name="id_personne"/>
+            </many-to-one>
+            <many-to-one name="coursByIdCours" optional="true" target-entity="org.jee.Data.Cours">
+                <join-column name="id_cours" nullable="false" referenced-column-name="id_cours"/>
+            </many-to-one>
+        </attributes>
+    </entity>
+</entity-mappings>
