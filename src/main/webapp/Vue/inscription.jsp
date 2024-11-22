@@ -78,14 +78,19 @@
         <label for="prenom">Prénom :</label>
         <input type="text" id="prenom" name="prenom" required>
 
-        <label for="motDePasse">Mot de passe :</label>
-        <input type="text" id="motDePasse" name="motDePasse" required>
-
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" required>
 
+        <label for="motDePasse">Mot de passe :</label>
+        <input type="text" id="motDePasse" name="motDePasse" required>
+
+        <label for="contact">Contact :</label>
+        <input type="text" id="contact" name="contact" required>
+
+
         <label for="dateNaissance">Date de Naissance :</label>
         <input type="date" id="dateNaissance" name="dateNaissance" required>
+
 
         <!-- Liste des cours -->
         <%

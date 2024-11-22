@@ -10,32 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="436c3bc7-00f9-4fa1-8ac3-3f173fd788f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jee/Servlets/DatabaseConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jee/Servlets/GestionInscription.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jee/Servlets/InscriptionCoursServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jee/Servlets/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jee/Servlets/LogoutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jee/Servlets/UneServletANommer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jee/Servlets/UpdateInscriptionServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jee/entity/Cours.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jee/entity/Inscription.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jee/entity/Personne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jee/entity/Resultat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/inscription.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Projet-JEE-Principale.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet-JEE-Principale.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Authentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Authentification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Deconnexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Deconnexion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Util/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Cours.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Cours.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Inscription.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Inscription.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Personne.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Personne.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Resultat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Resultat.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,9 +57,10 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 10.1.29.executor": "Run",
     "git-widget-placeholder": "Principale",
+    "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/victorandre/Desktop/Projet-JEE/src/main",
+    "last_opened_file_path": "C:/Users/Dawid/Desktop/PROJECT JEE/Projet-JEE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -207,7 +185,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-a81d5c7c" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -233,6 +212,7 @@
       <workItem from="1731934506147" duration="398000" />
       <workItem from="1731934915855" duration="6511000" />
       <workItem from="1731965569476" duration="1254000" />
+      <workItem from="1732278953852" duration="714000" />
     </task>
     <servers />
   </component>
