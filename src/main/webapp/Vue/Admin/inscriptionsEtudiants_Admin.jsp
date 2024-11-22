@@ -13,7 +13,7 @@
 </div>
 
 <div class="form-container">
-  <h2>Inscription professeur</h2>
+  <h2>Inscription Etudiant</h2>
   <form action="../../CreeEP" method="POST">
     <label for="nom">Nom</label>
     <input type="text" id="nom" name="nom" required>
