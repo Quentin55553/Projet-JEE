@@ -3,7 +3,6 @@ body {
   background-color: #f9f9f9;
 }
 
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -13,13 +12,17 @@ body {
 }
 
 .form-container {
-  height: 80vh;
-  margin-left: 40%;
+  height: auto;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #ffffff;
-  padding: 20px 30px;
+  padding: 20px 55px 38px 40px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
 }
 
 .form-container h2,h3 {
@@ -61,6 +64,20 @@ th, td {
   text-align: center;
 }
 
+.nouvel-eleve {
+  display: block;
+  margin: 20px auto 0;
+  text-align: center;
+  color: #007BFF;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.nouvel-eleve:hover {
+  text-decoration: underline;
+}
+
 .etudiant_inscrit {
   background-color: #4FAF62;
   color: white;
@@ -73,7 +90,6 @@ th, td {
   background-color: #D75959;
   color: white;
 }
-
 
 th {
   background-color: #007BFF;
