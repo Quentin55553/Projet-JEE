@@ -15,7 +15,7 @@
                 <input type="email" id="email" name="email" required>
 
                 <label for="mdp">Mot de passe</label>
-                <input type="mdp" id="mdp" name="mdp" required>
+                <input type="password" id="mdp" name="mdp" required>
 
                 <button type="submit">Se connecter</button>
             </form>
@@ -23,7 +23,7 @@
             <% if (request.getParameter("error") != null) { %>
                 <p class="error-message">Identifiants invalides. Veuillez réessayer.</p>
             <% } %>
-            <li><a href="inscription.jsp">Nouvel élève </a></li>
+            <a href="Vue/inscription.jsp">Nouvel élève</a>
         </div>
     </body>
 </html>
