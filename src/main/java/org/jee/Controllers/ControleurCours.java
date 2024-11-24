@@ -1,95 +1,53 @@
 package org.jee.Controllers;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import org.jee.Data.Cours;
 
-import java.io.IOException;
-import java.util.ArrayList;
+import jakarta.servlet.http.HttpServlet;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.jee.entity.Cours;
 
-
-public class ControleurCours {
-    private ArrayList<Cours> coursList = new ArrayList<>();
+import java.util.List;
+import java.util.Map;
 
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
+public class ControleurCours extends HttpServlet {
 
-        if ("list".equals(action)) {
-            request.setAttribute("coursList", coursList);
-            request.getRequestDispatcher("/cours.jsp").forward(request, response);
+    private Integer current_cours_id;
 
-        } else if ("delete".equals(action)) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            coursList.removeIf(cours -> cours.getId() == id);
-            response.sendRedirect("cours?action=list");
-        }
+    /**
+     * Ouvre une session hibernate, accède à la base de données et renvoie la liste des cours existant.
+     * */
+    public static List<Cours> getCoursList() {
+
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+        Session hibernateSession = factory.openSession();
+
+        List<Cours> coursList = hibernateSession.createQuery(
+                "FROM Cours",
+                Cours.class
+        ).list();
+        hibernateSession.close();
+
+        return coursList;
     }
 
-
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idParam = request.getParameter("id");
-        String nomCours = request.getParameter("nomCours");
-        String description = request.getParameter("description");
-        int idEnseignant = Integer.parseInt(request.getParameter("idEnseignant"));
-
-        if (idParam == null || idParam.isEmpty()) { // Ajouter
-            Cours cours = new Cours(coursList.size() + 1, idEnseignant, nomCours, description);
-            coursList.add(cours);
-
-        } else { // Modifier
-            int id = Integer.parseInt(idParam);
-            Cours cours = coursList.stream().filter(c -> c.getId() == id).findFirst().orElse(null);
-
-            if (cours != null) {
-                cours.setNom(nomCours);
-                cours.setDescription(description);
-                cours.setIdProfesseur(idEnseignant);
+    public static Cours getCoursByID(Integer id_cours){
+        List<Cours> coursList = getCoursList();
+        for(Cours cours : coursList){
+            if (Integer.valueOf(cours.getIdCours()).equals(id_cours)){
+                return cours;
             }
         }
 
-        response.sendRedirect("cours?action=list");
+        return null;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    private List<Cours> listeCours;
-
-
-    public void ajouterCours(Cours cours) {
-        if (listeCours == null) {
-            listeCours = new ArrayList<Cours>();
-        }
-
-        listeCours.add(cours);
+    public Integer getCurrent_cours_id() {
+        return current_cours_id;
     }
 
-
-    public void supprimerCours(Cours cours) {
-        if (listeCours != null) {
-            // Sûrement la méthode equals() à redéfinir dans Cours
-            listeCours.remove(cours);
-        }
+    public void setCurrent_cours_id(Integer current_cours_id) {
+        this.current_cours_id = current_cours_id;
     }
-
-
-    public void afficherCours() {
-        if (listeCours != null) {
-            for (Cours cours : listeCours) {
-                System.out.println(cours);
-            }
-        }
-    }
-     */
 }
