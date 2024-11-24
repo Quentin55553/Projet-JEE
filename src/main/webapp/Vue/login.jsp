@@ -7,6 +7,12 @@
     </head>
 
     <body>
+        <div class="background-shape1"></div>
+        <div class="background-shape2"></div>
+        <div class="background-shape"></div>
+
+        <img src="<%= request.getContextPath() %>/Images/cytech.png" class="loginLogo">
+
         <div class="form-container">
             <h2>Connexion</h2>
 
