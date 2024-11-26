@@ -75,7 +75,7 @@ public class ManageInscriptionServlet extends HttpServlet {
             }
 
             // Set the comment if provided
-            inscriptionToUpdate.setNoteProf(commentaire);
+            inscriptionToUpdate.setDescriptionRefus(commentaire);
 
             // Merge the updated inscription to ensure the changes are tracked by Hibernate
             session.merge(inscriptionToUpdate);  // Merge the detached entity
