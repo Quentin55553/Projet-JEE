@@ -48,7 +48,9 @@
 
         <br>
 
-        <button>Génerer un relevé de notes</button>
+        <form action="creationReleve" method="GET">
+            <button>Génerer un relevé de notes</button>
+        </form>
 
         <div>
             <h3>Moyenne des notes : <%= moyenneGlobaleFormatee %>/20</h3>
