@@ -41,7 +41,9 @@
 
         <div class="header">
             <h2>Menu étudiant : <%= etudiant.getPrenom() + " " + etudiant.getNom() %></h2>
-            <button>Déconnexion</button>
+            <form action="logout_" method="GET">
+                <button type="submit">Déconnexion</button>
+            </form>
         </div>
 
         <br>
