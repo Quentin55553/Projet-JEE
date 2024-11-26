@@ -1,4 +1,4 @@
-package org.jee.Controllers.Servlets;
+package org.jee.Controllers.Servlets.Professeur;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
