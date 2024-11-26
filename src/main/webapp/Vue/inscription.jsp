@@ -91,15 +91,15 @@
                 <label for="nom">Nom</label>
                 <input type="text" id="nom" name="nom" required>
 
-                <label for="motDePasse">Mot de passe</label>
-                <input type="password" id="motDePasse" name="motDePasse" required>
-
                 <label for="contact">Contact</label>
                 <input type="email" id="contact" name="contact" required>
 
 
                 <label for="dateNaissance">Date de naissance</label>
                 <input type="date" id="dateNaissance" name="dateNaissance" required>
+
+                <label for="motDePasse">Mot de passe</label>
+                <input type="password" id="motDePasse" name="motDePasse" required>
 
                 <br>
 
