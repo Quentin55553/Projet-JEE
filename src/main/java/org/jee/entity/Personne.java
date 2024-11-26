@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.sql.Date;
 import java.util.Collection;
 
+
 @Entity
 public class Personne {
     @Id
@@ -44,6 +45,7 @@ public class Personne {
     @OneToMany(mappedBy = "personneByIdEtudiant")
     private Collection<Resultat> resultatsByIdPersonne;
 
+
     // Getters et setters
     public String getIdPersonne() {
         return idPersonne;
@@ -53,6 +55,7 @@ public class Personne {
         this.idPersonne = idPersonne;
     }
 
+
     public String getNom() {
         return nom;
     }
@@ -60,6 +63,7 @@ public class Personne {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
 
     public String getPrenom() {
         return prenom;
@@ -69,6 +73,7 @@ public class Personne {
         this.prenom = prenom;
     }
 
+
     public Date getDateNaissance() {
         return dateNaissance;
     }
@@ -76,6 +81,7 @@ public class Personne {
     public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
+
 
     public String getContact() {
         return contact;
@@ -85,6 +91,7 @@ public class Personne {
         this.contact = contact;
     }
 
+
     public int getRole() {
         return role;
     }
@@ -92,6 +99,7 @@ public class Personne {
     public void setRole(int role) {
         this.role = role;
     }
+
 
     public String getPassword() {
         return password;
@@ -101,6 +109,7 @@ public class Personne {
         this.password = password;
     }
 
+
     public Collection<Cours> getCoursByIdPersonne() {
         return coursByIdPersonne;
     }
@@ -109,6 +118,7 @@ public class Personne {
         this.coursByIdPersonne = coursByIdPersonne;
     }
 
+
     public Collection<Inscription> getInscriptionsByIdPersonne() {
         return inscriptionsByIdPersonne;
     }
@@ -116,6 +126,7 @@ public class Personne {
     public void setInscriptionsByIdPersonne(Collection<Inscription> inscriptionsByIdPersonne) {
         this.inscriptionsByIdPersonne = inscriptionsByIdPersonne;
     }
+
 
     public Collection<Resultat> getResultatsByIdPersonne() {
         return resultatsByIdPersonne;

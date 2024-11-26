@@ -2,6 +2,7 @@ package org.jee.entity;
 
 import jakarta.persistence.*;
 
+
 @Entity
 public class Resultat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +22,7 @@ public class Resultat {
     @JoinColumn(name = "id_cours", referencedColumnName = "id_cours")
     private Cours coursByIdCours;
 
+
     // Getters et setters
     public int getIdResultat() {
         return idResultat;
@@ -30,6 +32,7 @@ public class Resultat {
         this.idResultat = idResultat;
     }
 
+
     public Double getNote() {
         return note;
     }
@@ -38,6 +41,7 @@ public class Resultat {
         this.note = note;
     }
 
+
     public Personne getPersonneByIdEtudiant() {
         return personneByIdEtudiant;
     }
@@ -45,6 +49,7 @@ public class Resultat {
     public void setPersonneByIdEtudiant(Personne personneByIdEtudiant) {
         this.personneByIdEtudiant = personneByIdEtudiant;
     }
+
 
     public Cours getCoursByIdCours() {
         return coursByIdCours;
