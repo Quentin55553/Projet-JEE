@@ -113,8 +113,22 @@
 
 <!-- Header with "Déconnexion" button -->
 <div class="header">
-  <h2>Administrateur</h2>
-  <button onclick="window.location.href='logout.html'">Déconnexion</button>
+  <img src="<%= request.getContextPath() %>/Images/cytech.png" class="logo">
+  <h2>Menu administrateur</h2>
+  <nav>
+    <ul>
+      <li><a href="menu_admin.jsp">Accueil</a></li>
+      <li><a href="inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
+      <li><a href="inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
+      <li><a href="gestionCours_Admin.jsp">Gestion de cours</a></li>
+      <li><a href="manageInscription.jsp">Gestion des inscriptions</a></li>
+      <li><a href="creationCours_Admin.jsp">Créer profil professeur</a></li>
+
+    </ul>
+  </nav>
+  <form action="../../logout" method="Get" style="display: inline;">
+    <button type="submit">Déconnexion</button>
+  </form>
 </div>
 <br><br><br><br><br>
 <!-- Form container for professor registration -->

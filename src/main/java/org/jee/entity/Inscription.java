@@ -3,7 +3,6 @@ package org.jee.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
-import java.util.Collection;
 
 @Entity
 public class Inscription {
@@ -25,13 +24,10 @@ public class Inscription {
     @JoinColumn(name = "id_etudiant", referencedColumnName = "id_personne")
     private Personne personneByIdEtudiant;
 
-    @ManyToMany
-    @JoinTable(
-            name = "inscription_cours", // Nom de la table de jointure
-            joinColumns = @JoinColumn(name = "id_inscription"), // Clé étrangère vers Inscription
-            inverseJoinColumns = @JoinColumn(name = "id_cours") // Clé étrangère vers Cours
-    )
-    private Collection<Cours> cours;
+    // Remplacer le ManyToMany par ManyToOne
+    @ManyToOne
+    @JoinColumn(name = "id_cours") // La clé étrangère vers la table Cours
+    private Cours cours;
 
     // Getters et setters
     public int getIdInscription() {
@@ -74,11 +70,11 @@ public class Inscription {
         this.personneByIdEtudiant = personneByIdEtudiant;
     }
 
-    public Collection<Cours> getCours() {
+    public Cours getCours() {
         return cours;
     }
 
-    public void setCours(Collection<Cours> cours) {
+    public void setCours(Cours cours) {
         this.cours = cours;
     }
 }

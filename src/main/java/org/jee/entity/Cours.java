@@ -3,8 +3,6 @@ package org.jee.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
-import java.util.Collection;
-
 
 @Entity
 public class Cours {
@@ -29,9 +27,7 @@ public class Cours {
     @JoinColumn(name = "id_enseignant", referencedColumnName = "id_personne")
     private Personne personneByIdEnseignant;
 
-    @ManyToMany(mappedBy = "cours")
-    private Collection<Inscription> inscriptions;
-
+    // Aucune relation ManyToMany ici
 
     // Getters et setters
     public int getIdCours() {
@@ -42,7 +38,6 @@ public class Cours {
         this.idCours = idCours;
     }
 
-
     public String getNomCours() {
         return nomCours;
     }
@@ -50,7 +45,6 @@ public class Cours {
     public void setNomCours(String nomCours) {
         this.nomCours = nomCours;
     }
-
 
     public String getDescription() {
         return description;
@@ -60,7 +54,6 @@ public class Cours {
         this.description = description;
     }
 
-
     public Date getDateDebut() {
         return dateDebut;
     }
@@ -68,7 +61,6 @@ public class Cours {
     public void setDateDebut(Date dateDebut) {
         this.dateDebut = dateDebut;
     }
-
 
     public Date getDateFin() {
         return dateFin;
@@ -78,21 +70,11 @@ public class Cours {
         this.dateFin = dateFin;
     }
 
-
     public Personne getPersonneByIdEnseignant() {
         return personneByIdEnseignant;
     }
 
     public void setPersonneByIdEnseignant(Personne personneByIdEnseignant) {
         this.personneByIdEnseignant = personneByIdEnseignant;
-    }
-
-
-    public Collection<Inscription> getInscriptions() {
-        return inscriptions;
-    }
-
-    public void setInscriptions(Collection<Inscription> inscriptions) {
-        this.inscriptions = inscriptions;
     }
 }

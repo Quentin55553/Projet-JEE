@@ -94,46 +94,24 @@
     </head>
 
     <body>
-        <header>
-            <div>
-                <h1>Bienvenue, <%= user.getPrenom() %> <%= user.getNom() %>!</h1>
-                <p>Vous êtes connecté en tant que :
-                    <%
-                        String roleText = "Utilisateur non reconnu";
-                        switch(user.getRole()) {
-                            case 1: roleText = "Administrateur"; break;
-                            case 2: roleText = "Enseignant"; break;
-                            case 3: roleText = "Étudiant"; break;
-                        }
-                    %>
-                    <strong><%= roleText %></strong>
-                </p>
-            </div>
-            <nav>
-                <ul>
-                    <%
-                        if (user.getRole() == 1) { // ADMIN
-                    %>
-                    <li><a href="admin/manageUsers.jsp">Gérer les utilisateurs</a></li>
-                    <li><a href="admin/manageCourses.jsp">Gérer les cours</a></li>
-                    <li><a href="admin/manageInscription.jsp">Gérer les inscriptions</a></li>
-                    <%
-                    } else if (user.getRole() == 2) { // ENSEIGNANT
-                    %>
-                    <li><a href="teacher/viewCourses.jsp">Voir mes cours</a></li>
-                    <li><a href="teacher/enterGrades.jsp">Saisir des notes</a></li>
-                    <%
-                    } else if (user.getRole() == 3) { // ÉTUDIANT
-                    %>
-                    <li><a href="student/viewCourses.jsp">Mes cours</a></li>
-                    <li><a href="student/viewResults.jsp">Voir mes résultats</a></li>
-                    <%
-                        }
-                    %>
-                </ul>
-            </nav>
-            <a href="logout" class="logout-link">Se déconnecter</a>
-        </header>
+    <div class="header">
+        <img src="<%= request.getContextPath() %>/Images/cytech.png" class="logo">
+        <h2>Menu administrateur</h2>
+        <nav>
+            <ul>
+                <li><a href="menu_admin.jsp">Accueil</a></li>
+                <li><a href="inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
+                <li><a href="inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
+                <li><a href="gestionCours_Admin.jsp">Gestion de cours</a></li>
+                <li><a href="manageInscription.jsp">Gestion des inscriptions</a></li>
+                <li><a href="creationCours_Admin.jsp">Créer profil professeur</a></li>
+
+            </ul>
+        </nav>
+        <form action="../../logout" method="Get" style="display: inline;">
+            <button type="submit">Déconnexion</button>
+        </form>
+    </div>
 
         <div class="container">
             <h1>Gérer les Inscriptions</h1>

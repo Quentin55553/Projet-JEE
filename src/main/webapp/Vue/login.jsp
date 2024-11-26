@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Formulaire de connexion</title>
-        <link rel="stylesheet" href="Vue/style.css">
+        <link rel="stylesheet" href="<%= request.getContextPath() %>/Vue/style.css">
     </head>
 
     <body>
@@ -16,7 +16,7 @@
         <div class="form-container">
             <h2>Connexion</h2>
 
-            <form action="login" method="POST">
+            <form action="<%= request.getContextPath() %>/login" method="POST">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
 
