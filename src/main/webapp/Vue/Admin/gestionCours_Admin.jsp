@@ -13,7 +13,7 @@
     Personne user = (Personne) session.getAttribute("user");
     if (user == null || user.getRole() != 1) {
         // Redirigez vers la page de connexion si l'utilisateur n'est pas connecté ou n'est pas administrateur
-        response.sendRedirect("login.jsp");
+        response.sendRedirect(request.getContextPath()+"/Vue/login.jsp");
         return;
     }
     /**

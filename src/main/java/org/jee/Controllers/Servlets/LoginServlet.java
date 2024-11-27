@@ -39,10 +39,11 @@ public class LoginServlet extends HttpServlet {
             // Redirige en fonction du rôle
             switch (personne.getRole()) {
                 case 1: // Rôle étudiant
-                    response.sendRedirect("admin/home.jsp");
+                    response.sendRedirect("Vue/Admin/menu_admin.jsp");
                     break;
                 case 2: // Rôle enseignant
-                    response.sendRedirect("teacher/home.jsp");
+                    System.out.println(personne.getIdPersonne());
+                    response.sendRedirect("Vue/Professeur/menu_Professeur.jsp");
                     break;
                 case 3: // Rôle administrateur
                     response.sendRedirect("student/home.jsp");

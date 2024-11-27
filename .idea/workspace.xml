@@ -2,14 +2,27 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Projet-JEE-Principale:war exploded2" />
+      <artifact name="Projet-JEE-Principale:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="436c3bc7-00f9-4fa1-8ac3-3f173fd788f3" name="Changes" comment="" />
+    <list default="true" id="436c3bc7-00f9-4fa1-8ac3-3f173fd788f3" name="Changes" comment="wip probleme servletLogin">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Deconnexion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/InscriptionCoursServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/InscriptionCoursServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/InscriptionProfServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/InscriptionProfServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/ManageInscriptionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/ManageInscriptionServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/updateNoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/updateNoteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/confirmation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/confirmation.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/menu_Professeur.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/menu_Professeur.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,41 +59,41 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.29.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Principale&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dawid/Desktop/PROJECT JEE/Projet-JEE&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.21491228&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.319202&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CodeWithMe&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.29.executor": "Run",
+    "git-widget-placeholder": "Principale",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/victorandre/Desktop/27:11 12h/Projet-JEE/src/main/webapp/Vue/Admin",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.21491228",
+    "project.structure.side.proportion": "0.319202",
+    "settings.editor.selected.configurable": "CodeWithMe",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/Vue/Admin" />
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/java/org/jee" />
       <recent name="C:\Users\Quent\Documents\Projet-JEE-Principale\src\main\webapp" />
-      <recent name="C:\Users\Quent\Documents\Projet-JEE-Principale\src\main\java\org\jee" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Quent\Documents\Projet-JEE-Principale\src\main\webapp\Vue" />
@@ -93,9 +106,9 @@
     <configuration name="Tomcat 10.1.29" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.30" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Projet-JEE-Principale:war exploded2">
+        <artifact name="Projet-JEE-Principale:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/Projet_JEE_Principale_war_exploded2" />
+            <option name="CONTEXT_PATH" value="/Projet_JEE_Principale_war_exploded" />
           </settings>
         </artifact>
       </deployment>
@@ -173,7 +186,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Projet-JEE-Principale:war exploded2" />
+          <artifact name="Projet-JEE-Principale:war exploded" />
         </option>
       </method>
     </configuration>
@@ -181,8 +194,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-a81d5c7c" />
       </set>
     </attachedChunks>
   </component>
@@ -211,11 +223,25 @@
       <workItem from="1732278953852" duration="714000" />
       <workItem from="1732281727426" duration="454000" />
       <workItem from="1732456282790" duration="184000" />
+      <workItem from="1732706820773" duration="2150000" />
     </task>
+    <task id="LOCAL-00001" summary="wip probleme servletLogin">
+      <option name="closed" value="true" />
+      <created>1732706992831</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732706992832</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="wip probleme servletLogin" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip probleme servletLogin" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

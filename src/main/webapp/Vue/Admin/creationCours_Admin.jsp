@@ -1,10 +1,26 @@
 <%@ page import="org.jee.Controllers.ControleurCours" %>
 <%@ page import="org.jee.entity.Cours" %>
+<%@ page import="org.jee.entity.Personne" %>
+<%@ page import="java.util.List" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     String actionAdmin = request.getParameter("action");
     Integer idCours = null;
     if (request.getParameter("id_cours")!= null) {idCours = Integer.valueOf(request.getParameter("id_cours"));}
+%>
+<%
+    // Vérifiez si l'utilisateur est connecté et est administrateur
+    Personne user = (Personne) session.getAttribute("user");
+    if (user == null || user.getRole() != 1) {
+        // Redirigez vers la page de connexion si l'utilisateur n'est pas connecté ou n'est pas administrateur
+        response.sendRedirect(request.getContextPath()+"/Vue/login.jsp");
+        return;
+    }
+    /**
+     * Afficher le tableau des cours
+     * */
+    List<Cours> coursList = ControleurCours.getCoursList();
 %>
 
 <!DOCTYPE html>
