@@ -9,6 +9,6 @@
         <property name="dateInscription" column="date_inscription"/>
         <property name="etat" column="etat"/>
         <property name="descriptionRefus" column="description_refus"/>
-        <property name="idEtudiant" column="id_etudiant"/>
+        <property name="personneByIdEtudiant" column="id_etudiant"/>
     </class>
 </hibernate-mapping>

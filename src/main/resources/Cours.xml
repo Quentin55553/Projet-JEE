@@ -10,6 +10,6 @@
         <property name="description" column="description"/>
         <property name="dateDebut" column="date_debut"/>
         <property name="dateFin" column="date_fin"/>
-        <property name="idEnseignant" column="id_enseignant"/>
+        <property name="personneByIdEnseignant" column="id_enseignant"/>
     </class>
 </hibernate-mapping>
