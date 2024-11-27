@@ -19,8 +19,8 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idPersonne = request.getParameter("idPersonne");
-        String password = request.getParameter("password");
+        String idPersonne = request.getParameter("email");
+        String password = request.getParameter("mdp");
 
         // Vérifier les informations d'identification via Hibernate
         Session session = HibernateUtil.getSessionFactory().openSession();
