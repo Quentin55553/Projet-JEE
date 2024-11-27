@@ -66,8 +66,8 @@ public class CreationCoursServlet extends HttpServlet {
                 else {
                         session.remove(cours);
                         tx.commit();
-                        response.setContentType("text/html");
-                        response.getWriter().println("Cours supprimé avec succés.");
+                        //Cours supprimé avec succés
+                        response.sendRedirect("Vue/Admin/gestionCours_Admin.jsp");
                 }
             } else {
                 Date date_debut = Date.valueOf(date_debut_str);
@@ -87,9 +87,11 @@ public class CreationCoursServlet extends HttpServlet {
                     if (cours == null) {
                         response.setContentType("text/html");
                         response.getWriter().println("Le cours n'existe pas.");
+                        return;
                     }
                 } else {
-                    response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                    response.setContentType("text/html");
+                    response.getWriter().println("Pas d'action définie.");
                     return;
                 }
 
@@ -101,9 +103,8 @@ public class CreationCoursServlet extends HttpServlet {
 
                 session.merge(cours);
                 tx.commit();
-
-                response.setContentType("text/html");
-                response.getWriter().println("<h1>Modification réussie</h1>");
+                //cours modifié avec succés
+                response.sendRedirect("Vue/Admin/gestionCours_Admin.jsp");
 
             }
         } catch (Exception e) {
