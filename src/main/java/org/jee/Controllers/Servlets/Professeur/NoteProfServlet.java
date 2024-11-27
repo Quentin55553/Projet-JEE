@@ -41,7 +41,7 @@ public class NoteProfServlet extends HttpServlet {
 
             // Query for all Inscription objects where the state is 1 (accepted students)
             Query<Inscription> inscriptionQuery = session.createQuery(
-                    "FROM Inscription WHERE coursByIdCours.idCours = :idCours AND etat = 1", Inscription.class);
+                    "FROM Inscription WHERE cours.idCours = :idCours AND etat = 1", Inscription.class);
             inscriptionQuery.setParameter("idCours", idCours);
             List<Inscription> inscriptions = inscriptionQuery.list();
             request.setAttribute("cours", cours);
