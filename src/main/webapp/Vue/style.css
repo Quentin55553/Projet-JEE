@@ -3,197 +3,16 @@ body {
     background-color: #f9f9f9;
 }
 
-.Etudiant{
-    border: 2px solid #007BFF; /* Ajoute une bordure bleue */
-    padding: 10px; /* Ajoute un peu d'espace à l'intérieur */
-    background-color: #f0f8ff; /* Couleur de fond légèrement bleutée */
-    border-radius: 5px; /* Arrondi des coins */
-    margin-bottom: 20px; /* Espacement entre les éléments */
-}
-
-.Professeur{
-    border: 2px solid #28A745; /* Bordure verte */
-    padding: 10px; /* Ajoute un peu d'espace à l'intérieur */
-    background-color: #e8f5e9; /* Couleur de fond légèrement verte */
-    border-radius: 5px; /* Arrondi des coins */
-    margin-bottom: 20px; /* Espacement entre les éléments */
-}
-
-
-/* Réinitialisation des marges et paddings par défaut */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box;
-}
-
-
-    /* Header principal */
 .header {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Sépare les éléments (titre et navigation) */
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 0; /* Ajuste l'espacement vertical */
-    border-bottom: 2px solid; /* Bordure inférieure */
-    position: sticky; /* Colle le header en haut */
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre élégante */
-    background-color: white; /* Couleur de fond */
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
 }
-
-/* Logo aligné à gauche */
-.header img.logo {
-    position: absolute; /* Permet de positionner indépendamment du flux */
-    top: 10px; /* Espace en haut */
-    left: 10px; /* Espace à gauche */
-    height: 70px; /* Taille ajustée du logo */
+.header-base h4{
+    text-align: center;
 }
-
-/* Titre centré au-dessus de la navigation */
-.header h2 {
-    font-size: 25px; /* Taille réduite */
-    font-weight: bold;
-    margin: 0 0 20px; /* Espacement vertical */
-    text-align: center; /* Centre le texte */
-}
-
-/* Navigation sous le titre */
-/* Navigation sous le titre */
-.header nav {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centre les catégories horizontalement */
-    flex-wrap: wrap; /* Permet une nouvelle ligne si nécessaire */
-    gap: 10px; /* Espacement entre les catégories */
-    align-self: flex-end; /* Place la navigation en bas du header */
-}
-
-/* Liste de navigation */
-.header nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap; /* Adapte le menu en cas de débordement */
-    justify-content: center;
-    gap: 10px; /* Espacement entre les éléments */
-}
-
-/* Liens de navigation */
-.header nav ul li a {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Bouton de déconnexion aligné à droite */
-.header form {
-    position: absolute;
-    top: 50%; /* Place le bouton au milieu verticalement */
-    right: 10px; /* Petit espace entre le bord droit */
-    transform: translateY(-50%); /* Centre verticalement le bouton dans le header */
-}
-
-.header form button {
-    border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    background-color: #ff4d4d; /* Couleur pour signaler la déconnexion */
-    color: white;
-}
-
-
-.header-admin {
-    background-color: #f8d7da; /* Rouge pâle */
-    border-color: #f5c6cb; /* Couleur pour la bordure */
-}
-
-.header-admin h2,
-.header-admin nav ul li a,
-.header-admin form button {
-    color: #721c24; /* Rouge plus foncé pour le texte */
-}
-
-.header-admin nav ul li a:hover {
-    background-color: #f5c6cb; /* Arrière-plan au survol */
-}
-
-.header-admin form button {
-    background-color: #f5c6cb; /* Fond du bouton */
-}
-
-.header-admin form button:hover {
-    background-color: #721c24; /* Fond au survol */
-    color: white;
-}
-
-.header-professeur {
-    background-color: #d4edda; /* Vert pâle */
-    border-color: #c3e6cb;
-}
-
-.header-professeur h2,
-.header-professeur nav ul li a,
-.header-professeur form button {
-    color: #155724; /* Vert foncé pour le texte */
-}
-
-.header-professeur nav ul li a:hover {
-    background-color: #c3e6cb;
-}
-
-.header-professeur form button {
-    background-color: #c3e6cb;
-}
-
-.header-professeur form button:hover {
-    background-color: #155724;
-    color: white;
-}
-
-.header-etudiant {
-    background-color: #d1ecf1; /* Bleu pâle */
-    border-color: #bee5eb; /* Bordure bleue */
-}
-
-.header-etudiant h2,
-.header-etudiant nav ul li a,
-.header-etudiant form button {
-    color: #0c5460; /* Bleu foncé pour le texte */
-}
-
-.header-etudiant nav ul li a:hover {
-    background-color: #bee5eb; /* Arrière-plan au survol */
-}
-
-.header-etudiant form button {
-    background-color: #bee5eb; /* Fond du bouton */
-}
-
-.header-etudiant form button:hover {
-    background-color: #0c5460; /* Fond au survol */
-    color: white;
-}
-
-
 .loginLogo {
     display: block;
     position: absolute;
@@ -217,6 +36,8 @@ html, body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 250px;
 }
+
+
 
 .form-container h2, h3 {
     text-align: center;
@@ -408,6 +229,59 @@ button:not([id]):not([class]):hover, .bouton-envoyer:hover {
     opacity: 0.2;
     z-index: -1;
 }
+.textecontenuprincipal {
+    text-align: center; /* Centre le contenu */
+    padding: 20px; /* Ajoute de l'espace intérieur */
+    margin: 20px auto; /* Centre horizontalement et ajoute de l'espace vertical */
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    border-radius: 10px; /* Arrondi des coins */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre */
+    max-width: 800px; /* Limite la largeur */
+}
 
+.textecontenuprincipal h4 {
+    font-size: 24px; /* Taille du texte de l'en-tête */
+    font-weight: bold; /* Texte en gras */
+    color: #007BFF; /* Couleur bleue pour le titre */
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
 
+.action {
+    display: flex; /* Active le mode flexbox */
+    flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+    justify-content: center; /* Centre horizontalement les boutons */
+    gap: 15px; /* Espacement entre les boutons */
+    margin-top: 20px; /* Ajoute un espacement en haut */
+}
+
+.action button {
+    background-color: #007BFF; /* Couleur de fond bleue */
+    color: white; /* Texte blanc */
+    padding: 10px 20px; /* Ajoute de l'espace intérieur au bouton */
+    border: none; /* Supprime les bordures */
+    border-radius: 5px; /* Arrondi des coins */
+    cursor: pointer; /* Change le curseur au survol */
+    font-size: 16px; /* Taille du texte */
+    transition: background-color 0.3s ease; /* Animation sur le survol */
+}
+
+.action button:hover {
+    background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+#dynamic-content {
+    margin-top: 30px; /* Espacement en haut */
+    font-size: 16px; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+}
+
+.textecontenuprincipal {
+    text-align: center; /* Centre le contenu */
+    padding: 20px; /* Ajoute de l'espace intérieur */
+    margin: 20px auto; /* Centre horizontalement et ajoute de l'espace vertical */
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    border-radius: 10px; /* Arrondi des coins */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre */
+    max-width: 800px; /* Limite la largeur */
+}
 
