@@ -20,6 +20,7 @@ import java.util.Map;
 
 @WebServlet("/InscriptionProf")
 public class InscriptionProfServlet extends HttpServlet {
+    /*
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Retrieve the session ID (assuming it represents the professor)
@@ -73,4 +74,6 @@ public class InscriptionProfServlet extends HttpServlet {
             response.getWriter().println("Error occurred while processing inscriptions.");
         }
     }
+    */
+
 }

@@ -18,8 +18,8 @@ import javax.naming.ldap.Control;
 import java.io.IOException;
 import java.sql.Date;
 
-@WebServlet("/CreeCours")
-public class CreationCoursServlet extends HttpServlet {
+@WebServlet("/CreeCours_")
+public class CreationCoursServlet_ extends HttpServlet {
 
     Personne profTest = new Personne();
 

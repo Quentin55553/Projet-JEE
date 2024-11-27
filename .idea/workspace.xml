@@ -10,18 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="436c3bc7-00f9-4fa1-8ac3-3f173fd788f3" name="Changes" comment="wip probleme servletLogin">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Deconnexion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/CreationCoursServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/CreationCoursServlet_.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/InscriptionCoursServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/InscriptionCoursServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/InscriptionProfServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/InscriptionProfServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/ManageInscriptionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/ManageInscriptionServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/updateNoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/updateNoteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/confirmation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/confirmation.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/menu_Professeur.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/menu_Professeur.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +62,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/victorandre/Desktop/27:11 12h/Projet-JEE/src/main/webapp/Vue/Admin",
+    "last_opened_file_path": "/Users/victorandre/Desktop/27:11 14h/Projet-JEE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -224,6 +217,7 @@
       <workItem from="1732281727426" duration="454000" />
       <workItem from="1732456282790" duration="184000" />
       <workItem from="1732706820773" duration="2150000" />
+      <workItem from="1732713614311" duration="1487000" />
     </task>
     <task id="LOCAL-00001" summary="wip probleme servletLogin">
       <option name="closed" value="true" />

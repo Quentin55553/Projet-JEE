@@ -1,4 +1,4 @@
-package org.jee.Servlets;
+package org.jee.Controllers.Servlets;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -81,7 +81,8 @@ public class InscriptionCoursServlet extends HttpServlet {
                 }
 
                 // Ajout des cours à l'inscription
-                inscription.setCours(coursCollection);
+                //TODO: Modifier la ligne suivante :
+                //inscription.setCours(coursCollection);
                 // Ajout de l'ID de la personne pour la table de jointure
                 inscription.setPersonneByIdEtudiant(personne); // Ceci associera la personne à chaque inscription-cours.
 

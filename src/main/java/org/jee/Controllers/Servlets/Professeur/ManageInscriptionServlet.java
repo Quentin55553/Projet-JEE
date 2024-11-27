@@ -17,6 +17,7 @@ import java.util.Collection;
 
 @WebServlet("/ManageInscriptionServlet")
 public class ManageInscriptionServlet extends HttpServlet {
+    /*
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String studentEmail = request.getParameter("studentEmail");
@@ -90,4 +91,6 @@ public class ManageInscriptionServlet extends HttpServlet {
             response.getWriter().println("Erreur lors de la mise à jour de l'inscription.");
         }
     }
+   */
+
 }
