@@ -41,7 +41,7 @@ public class ManageInscriptionServlet extends HttpServlet {
             }
 
             // Retrieve the course (Cours) entity using the course name
-            Cours course = (Cours) session.createQuery("FROM Cours WHERE nomCours = :courseName")
+            Cours course = (Cours) session.createQuery("FROM Cours WHERE nomCours = :courseName",Cours.class)
                     .setParameter("courseName", courseName)
                     .uniqueResult();
 
@@ -56,7 +56,7 @@ public class ManageInscriptionServlet extends HttpServlet {
             // Find the corresponding inscription for the course
             Inscription inscriptionToUpdate = null;
             for (Inscription inscription : inscriptions) {
-                if (inscription.getCoursByIdCours().equals(course)) {
+                if (inscription.getCours().equals(course)) {
                     inscriptionToUpdate = inscription;
                     break;
                 }

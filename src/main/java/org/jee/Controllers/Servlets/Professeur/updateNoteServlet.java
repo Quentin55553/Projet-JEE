@@ -46,8 +46,8 @@ public class updateNoteServlet extends HttpServlet {
                     Cours cours = session.get(Cours.class, idCours);
 
                     if (etudiant != null && cours != null) {
-                        resultat.setEtudiant(etudiant);
-                        resultat.setCours(cours);
+                        resultat.setPersonneByIdEtudiant(etudiant);
+                        resultat.setCoursByIdCours(cours);
                         resultat.setNote(note);
 
                         // Save the Resultat entity
