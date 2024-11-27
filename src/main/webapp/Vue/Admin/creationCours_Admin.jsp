@@ -1,4 +1,4 @@
-<%@ page import="org.jee.Controllers.ControleurCours" %>
+<%@ page import="org.jee.Controllers.Servlets.Admin.ControleurCours" %>
 <%@ page import="org.jee.entity.Cours" %>
 <%@ page import="org.jee.entity.Personne" %>
 <%@ page import="java.util.List" %>

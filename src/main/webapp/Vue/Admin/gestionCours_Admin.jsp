@@ -3,7 +3,7 @@
 <%@ page import="org.hibernate.SessionFactory" %>
 <%@ page import="org.hibernate.cfg.Configuration" %>
 <%@ page import="org.jee.entity.Cours" %>
-<%@ page import="org.jee.Controllers.ControleurCours" %>
+<%@ page import="org.jee.Controllers.Servlets.Admin.ControleurCours" %>
 <%@ page import="org.jee.entity.Personne" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>

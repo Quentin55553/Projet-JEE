@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Administrateur - Formulaire d'inscription étudiant</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
   <style>
     /* Global styles */
     body {
@@ -22,21 +22,6 @@
       background-color: #f4f4f9;
       margin: 0;
       padding: 0;
-    }
-
-    .header {
-      background-color: #007BFF;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .header h2 {
-      margin: 0;
     }
 
     .header button {

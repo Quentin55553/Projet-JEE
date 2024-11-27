@@ -13,7 +13,7 @@
       <user-name>root</user-name>
       <schema-mapping />
     </data-source>
-    <data-source name="gestion_scolarite@localhost" uuid="1c714ba9-4b29-4685-b8ad-310ff37331d5">
+    <data-source name="gestion_scolarite@localhost" uuid="7d0b3da1-67b6-46ac-8ca2-4d162ab8b2c6">
       <database-info product="MySQL" version="9.0.1" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)" dbms="MYSQL" exact-version="9.0.1" exact-driver-version="8.2">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>

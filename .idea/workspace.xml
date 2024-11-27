@@ -13,19 +13,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/creationCours_Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/creationCours_Admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/gestionCours_Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/gestionCours_Admin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/inscriptionsEtudiants_Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/inscriptionsEtudiants_Admin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/inscriptionsProfesseurs_Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/inscriptionsProfesseurs_Admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/manageInscription.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/manageInscription.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/menu_admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/menu_admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/inscription_prof.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/inscription_prof.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/menu_Professeur.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/menu_Professeur.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/saisieNotes_Professeur.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/saisieNotes_Professeur.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/traitementNotes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/traitementNotes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +67,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/victorandre/Desktop/27:11 14h/Projet-JEE/src/main/webapp/Vue",
+    "last_opened_file_path": "/Users/victorandre/Desktop/27:11 20/Projet-JEE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -231,6 +223,7 @@
       <workItem from="1732456282790" duration="184000" />
       <workItem from="1732706820773" duration="2150000" />
       <workItem from="1732713614311" duration="8086000" />
+      <workItem from="1732733597031" duration="1751000" />
     </task>
     <task id="LOCAL-00001" summary="wip probleme servletLogin">
       <option name="closed" value="true" />

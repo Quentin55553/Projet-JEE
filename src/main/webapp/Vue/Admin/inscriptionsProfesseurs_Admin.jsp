@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Administrateur - Formulaire d'inscription professeur</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
   <style>
     /* Global styles */
     body {
@@ -14,35 +14,9 @@
       padding: 0;
     }
 
-    .header {
-      background-color: #007BFF;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
 
-    .header h2 {
-      margin: 0;
-    }
 
-    .header button {
-      background-color: #dc3545;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 16px;
-      float: right;
-      margin-top: -30px;
-    }
 
-    .header button:hover {
-      background-color: #c82333;
-    }
 
     /* Form container styles */
     .form-container {
