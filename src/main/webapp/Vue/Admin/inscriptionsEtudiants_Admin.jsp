@@ -113,7 +113,7 @@
   <nav>
     <ul>
       <li><a href="menu_admin.jsp">Accueil</a></li>
-      <li><a href="inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
+      <li><a href="inscriptionsEtudiants_Admin.jsp">Cr&#233;er profil &#233;tudiant</a></li>
       <li><a href="inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
       <li><a href="gestionCours_Admin.jsp">Gestion de cours</a></li>
       <li><a href="manageInscription.jsp">Gestion des inscriptions</a></li>

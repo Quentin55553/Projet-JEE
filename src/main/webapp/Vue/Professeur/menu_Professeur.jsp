@@ -41,8 +41,8 @@
 
     <!-- Boutons d'action -->
     <div class="actions">
-        <button onclick="window.location.href='inscription_prof.jsp'">Inscription Professeur</button>
-        <button onclick="window.location.href='saisieNotes_Professeur.jsp'">Saisie de Notes</button>
+        <button onclick="window.location.href='../../InscriptionProf'">Inscription Professeur</button>
+        <button onclick="window.location.href='../../Servlet_Debut_Note_Prof'">Saisie de Notes</button>
         <button onclick="window.location.href='traitementNotes.jsp'">Traitement des Notes</button>
     </div>
 
