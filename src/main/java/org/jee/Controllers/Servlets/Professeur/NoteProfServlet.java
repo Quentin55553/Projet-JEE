@@ -52,7 +52,7 @@ public class NoteProfServlet extends HttpServlet {
 
             // Collect the list of students who are accepted for this course
             List<Personne> students = session.createQuery(
-                            "SELECT i.personneByIdEtudiant FROM Inscription i WHERE i.coursByIdCours.idCours = :idCours AND i.etat = 1", Personne.class)
+                            "SELECT i.personneByIdEtudiant FROM Inscription i WHERE i.cours.idCours = :idCours AND i.etat = 1", Personne.class)
                     .setParameter("idCours", idCours)
                     .list();
 
