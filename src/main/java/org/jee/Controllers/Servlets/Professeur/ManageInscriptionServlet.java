@@ -24,11 +24,6 @@ public class ManageInscriptionServlet extends HttpServlet {
         String action = request.getParameter("action");
         String commentaire = request.getParameter("commentaire");
 
-        if (studentEmail == null || courseName == null || action == null) {
-            response.getWriter().println("Erreur : Informations manquantes.");
-            return;
-        }
-
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction tx = session.beginTransaction();
 

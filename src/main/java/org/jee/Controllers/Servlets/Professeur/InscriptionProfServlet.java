@@ -22,14 +22,16 @@ import java.util.Map;
 public class InscriptionProfServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Retrieve the session ID (assuming it represents the professor)
-        request.getSession().setAttribute("id", "2.1@cy-tech.fr");
-        String sessionId = (String) request.getSession().getAttribute("id");
+        // Retrieve the user (Personne) object from the session
+        Personne user = (Personne) request.getSession().getAttribute("user");
 
-        if (sessionId == null) {
+        if (user == null) {
             response.getWriter().println("Error: User session not found.");
             return;
         }
+
+        // Retrieve the ID of the user (professor)
+        String sessionId = user.getIdPersonne();
 
         // Open Hibernate session
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {

@@ -20,9 +20,8 @@ public class Servlet_Debut_Note_Prof extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Récupérer l'ID de l'utilisateur connecté depuis la session
-        HttpSession httpSession = request.getSession();
-        httpSession.setAttribute("id", "2.1@cy-tech.fr");
-        String idEnseignant = (String) httpSession.getAttribute("id");
+        Personne user = (Personne) request.getSession().getAttribute("user");
+        String idEnseignant = user.getIdPersonne();
 
         if (idEnseignant == null) {
             response.sendRedirect("login.jsp"); // Redirection si pas connecté
