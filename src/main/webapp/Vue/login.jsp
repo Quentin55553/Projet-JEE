@@ -17,11 +17,11 @@
             <h2>Connexion</h2>
 
             <form action="<%= request.getContextPath() %>/login" method="POST">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <label for="idPersonne">Email</label>
+                <input type="email" id="idPersonne" name="idPersonne" required>
 
-                <label for="mdp">Mot de passe</label>
-                <input type="password" id="mdp" name="mdp" required>
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
 
                 <button type="submit">Se connecter</button>
             </form>
