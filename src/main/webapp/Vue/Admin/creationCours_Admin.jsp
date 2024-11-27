@@ -28,7 +28,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Amdinistrateur - Formulaire de création de cours</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/Vue/style.css">
 </head>
 <body>
 <!-- Header avec menu de navigation -->
@@ -37,16 +37,16 @@
     <h2>Administrateur</h2>
     <nav>
         <ul>
-            <li><a href="menu_admin.jsp">Accueil</a></li>
-            <li><a href="inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
-            <li><a href="inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
-            <li><a href="gestionCours_Admin.jsp">Gestion de cours</a></li>
-            <li><a href="manageInscription.jsp">Gestion des inscriptions</a></li>
-            <li><a href="creationCours_Admin.jsp">Créer profil professeur</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/menu_admin.jsp">Accueil</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/gestionCours_Admin.jsp">Gestion de cours</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/manageInscription.jsp">Gestion des inscriptions</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp">Créer profil professeur</a></li>
 
         </ul>
     </nav>
-    <form action="../../logout" method="Get" style="display: inline;">
+    <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
         <button type="submit">Déconnexion</button>
     </form>
 </div>
@@ -55,7 +55,7 @@
 
     <% if ("creation".equals(actionAdmin)) {%>
     <h2>Création de Cours</h2>
-    <form action="../../CreeCours" method="POST">
+    <form action="<%= request.getContextPath() %>/CreeCours" method="POST">
         <input type="hidden" name="action" value="creation">
 
         <label>Nom du cours</label>
@@ -80,7 +80,7 @@
     Cours cours = ControleurCours.getCoursByID(id_cours);
     %>
     <h2>Modification de Cours</h2>
-    <form action="../../CreeCours" method="POST">
+    <form action="<%= request.getContextPath() %>/CreeCours" method="POST">
         <input type="hidden" name="action" value="modification">
         <input type="hidden" name="id_cours" value="<%= id_cours%>">
 
@@ -103,7 +103,7 @@
     </form>
     <% } else if ("suppression".equals(actionAdmin)) {%>
     <h2>Suppression de Cours</h2>
-    <form action="../../CreeCours" method="POST">
+    <form action="<%= request.getContextPath() %>/CreeCours" method="POST">
         <input type="hidden" name="action" value="suppression">
         <input type="hidden" name="id_cours" value="<%= id_cours%>">
         <label>Voulez-vous supprimer ce cours ?</label>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Administrateur - Formulaire d'inscription professeur</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="<%= request.getContextPath() %>/Vue/style.css">
   <style>
     /* Global styles */
     body {
@@ -91,16 +91,16 @@
   <h2>Administrateur</h2>
   <nav>
     <ul>
-      <li><a href="menu_admin.jsp">Accueil</a></li>
-      <li><a href="inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
-      <li><a href="inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
-      <li><a href="gestionCours_Admin.jsp">Gestion de cours</a></li>
-      <li><a href="manageInscription.jsp">Gestion des inscriptions</a></li>
-      <li><a href="creationCours_Admin.jsp">Créer profil professeur</a></li>
+      <li><a href="<%= request.getContextPath() %>/Vue/Admin/menu_admin.jsp">Accueil</a></li>
+      <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
+      <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
+      <li><a href="<%= request.getContextPath() %>/Vue/Admin/gestionCours_Admin.jsp">Gestion de cours</a></li>
+      <li><a href="<%= request.getContextPath() %>/Vue/Admin/manageInscription.jsp">Gestion des inscriptions</a></li>
+      <li><a href="<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp">Créer profil professeur</a></li>
 
     </ul>
   </nav>
-  <form action="../../logout" method="Get" style="display: inline;">
+  <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
     <button type="submit">Déconnexion</button>
   </form>
 </div>
@@ -131,7 +131,7 @@
 
   <!-- Back to Admin Menu Link -->
   <div class="back-link">
-    <a href="menu_admin.html">Retour au menu administrateur</a>
+    <a href="<%= request.getContextPath() %>/Vue/Admin/menu_admin.jsp">Retour au menu administrateur</a>
   </div>
 </div>
 

@@ -2,9 +2,9 @@
 <%@ page import="org.hibernate.Session" %>
 <%@ page import="org.hibernate.SessionFactory" %>
 <%@ page import="org.hibernate.cfg.Configuration" %>
-<%@ page import="org.jee.Data.Inscription" %>
-<%@ page import="org.jee.Data.Cours" %>
-<%@ page import="org.jee.Data.Personne" %>
+<%@ page import="org.jee.entity.Inscription" %>
+<%@ page import="org.jee.entity.Cours" %>
+<%@ page import="org.jee.entity.Personne" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
@@ -99,16 +99,16 @@
         <h2>Administrateur</h2>
         <nav>
             <ul>
-                <li><a href="menu_admin.jsp">Accueil</a></li>
-                <li><a href="inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
-                <li><a href="inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
-                <li><a href="gestionCours_Admin.jsp">Gestion de cours</a></li>
-                <li><a href="manageInscription.jsp">Gestion des inscriptions</a></li>
-                <li><a href="creationCours_Admin.jsp">Créer profil professeur</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/menu_admin.jsp">Accueil</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/gestionCours_Admin.jsp">Gestion de cours</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/manageInscription.jsp">Gestion des inscriptions</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp">Créer profil professeur</a></li>
 
             </ul>
         </nav>
-        <form action="../../logout" method="Get" style="display: inline;">
+        <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
             <button type="submit">Déconnexion</button>
         </form>
     </div>

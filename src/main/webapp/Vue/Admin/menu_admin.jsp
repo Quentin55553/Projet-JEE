@@ -24,16 +24,16 @@
     <h2>Administrateur</h2>
     <nav>
         <ul>
-            <li><a href="menu_admin.jsp">Accueil</a></li>
-            <li><a href="inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
-            <li><a href="inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
-            <li><a href="gestionCours_Admin.jsp">Gestion de cours</a></li>
-            <li><a href="manageInscription.jsp">Gestion des inscriptions</a></li>
-            <li><a href="creationCours_Admin.jsp">Créer profil professeur</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/menu_admin.jsp">Accueil</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/gestionCours_Admin.jsp">Gestion de cours</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/manageInscription.jsp">Gestion des inscriptions</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp">Créer profil professeur</a></li>
 
         </ul>
     </nav>
-    <form action="../../logout" method="Get" style="display: inline;">
+    <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
         <button type="submit">Déconnexion</button>
     </form>
 </div>
@@ -44,11 +44,11 @@
 
     <!-- Boutons d'action -->
     <div class="actions">
-        <button onclick="window.location.href='inscriptionsEtudiants_Admin.jsp'">Créer profil étudiant</button>
-        <button onclick="window.location.href='inscriptionsProfesseurs_Admin.jsp'">Créer profil professeur</button>
-        <button onclick="window.location.href='gestionCours_Admin.jsp'">Accéder à la gestion de cours</button>
-        <button onclick="window.location.href='manageInscription.jsp'">Gestion des inscriptions</button>
-        <button onclick="window.location.href='creationCours_Admin.jsp'">Créer profil professeur</button>
+        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/inscriptionsEtudiants_Admin.jsp'">Créer profil étudiant</button>
+        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/inscriptionsProfesseurs_Admin.jsp'">Créer profil professeur</button>
+        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/gestionCours_Admin.jsp'">Accéder à la gestion de cours</button>
+        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/manageInscription.jsp'">Gestion des inscriptions</button>
+        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp'">Créer profil professeur</button>
     </div>
 
     <!-- Section dynamique selon le choix -->

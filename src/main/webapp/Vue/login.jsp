@@ -30,7 +30,7 @@
     <p class="error-message">Identifiants invalides. Veuillez réessayer.</p>
     <% } %>
 
-    <a href="Vue/inscription.jsp" class="nouvel-eleve">Nouvel élève</a>
+    <a href="<%= request.getContextPath() %>/Vue/inscription.jsp" class="nouvel-eleve">Nouvel élève</a>
 </div>
 </body>
 </html>

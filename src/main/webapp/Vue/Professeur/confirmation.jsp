@@ -38,7 +38,7 @@
 <div class="container">
     <h1>Merci!</h1>
     <p>Les notes ont été soumises avec succès.</p>
-    <p><a href="menu_Professeur.html">Retourner à l'accueil</a></p>
+    <p><a href="<%= request.getContextPath() %>/Vue/Professeur/menu_Professeur.jsp">Retourner à l'accueil</a></p>
 </div>
 </body>
 </html>

@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
                     response.sendRedirect("Vue/Professeur/menu_Professeur.jsp");
                     break;
                 case 3: // Rôle administrateur
-                    response.sendRedirect("student/home.jsp");
+                    response.sendRedirect(request.getContextPath()+"/DemandeInscriptionServlet");
                     break;
                 default:
                     // Rôle inconnu

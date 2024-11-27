@@ -36,22 +36,22 @@
         <h2>Administrateur</h2>
         <nav>
             <ul>
-                <li><a href="menu_admin.jsp">Accueil</a></li>
-                <li><a href="inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
-                <li><a href="inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
-                <li><a href="gestionCours_Admin.jsp">Gestion de cours</a></li>
-                <li><a href="manageInscription.jsp">Gestion des inscriptions</a></li>
-                <li><a href="creationCours_Admin.jsp">Créer profil professeur</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/menu_admin.jsp">Accueil</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/gestionCours_Admin.jsp">Gestion de cours</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/manageInscription.jsp">Gestion des inscriptions</a></li>
+                <li><a href="<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp">Créer profil professeur</a></li>
 
             </ul>
         </nav>
-        <form action="../../logout" method="Get" style="display: inline;">
+        <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
             <button type="submit">Déconnexion</button>
         </form>
     </div>
 
         <div>
-            <form action="creationCours_Admin.jsp" method="post">
+            <form action="<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp" method="post">
                 <input type="hidden" name="action" value="creation">
                 <button type="submit">Créer cours</button>
             </form>
@@ -73,12 +73,12 @@
                         <td><%= cours.getNomCours()%></td>
                         <td><%= cours.getPersonneByIdEnseignant().getIdPersonne() %></td>
                         <td>
-                            <form action="creationCours_Admin.jsp" method="post">
+                            <form action="<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp" method="post">
                                 <input type="hidden" name="action" value="modification">
                                 <input type="hidden" name="id_cours" value="<%= cours.getIdCours()%>">
                                 <button type="submit">Modifier</button>
                             </form>
-                            <form action="creationCours_Admin.jsp" method="post">
+                            <form action="<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp" method="post">
                                 <input type="hidden" name="action" value="suppression">
                                 <input type="hidden" name="id_cours" value="<%= cours.getIdCours()%>">
                                 <button type="submit" class="deleteButton">Supprimer</button>

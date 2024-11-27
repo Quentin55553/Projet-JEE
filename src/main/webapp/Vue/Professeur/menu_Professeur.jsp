@@ -24,13 +24,13 @@
     <h2>Professeur</h2>
     <nav>
         <ul>
-            <li><a href="menu_Professeur.jsp">Accueil</a></li>
-            <li><a href="inscription_prof.jsp">Inscription Professeur</a></li>
-            <li><a href="saisieNotes_Professeur.jsp">Saisie de Notes</a></li>
-            <li><a href="traitementNotes.jsp">Traitement des Notes</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Professeur/menu_Professeur.jsp">Accueil</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Professeur/inscription_prof.jsp">Inscription Professeur</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Professeur/saisieNotes_Professeur.jsp">Saisie de Notes</a></li>
+            <li><a href="<%= request.getContextPath() %>/Vue/Professeur/traitementNotes.jsp">Traitement des Notes</a></li>
         </ul>
     </nav>
-    <form action="../../logout" method="Get" style="display: inline;">
+    <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
         <button type="submit">Déconnexion</button>
     </form>
 </div>
@@ -41,9 +41,9 @@
 
     <!-- Boutons d'action -->
     <div class="actions">
-        <button onclick="window.location.href='../../InscriptionProf'">Inscription Professeur</button>
-        <button onclick="window.location.href='../../Servlet_Debut_Note_Prof'">Saisie de Notes</button>
-        <button onclick="window.location.href='traitementNotes.jsp'">Traitement des Notes</button>
+        <button onclick="window.location.href='<%= request.getContextPath() %>/InscriptionProf'">Inscription Professeur</button>
+        <button onclick="window.location.href='<%= request.getContextPath() %>/Servlet_Debut_Note_Prof'">Saisie de Notes</button>
+        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Professeur/traitementNotes.jsp'">Traitement des Notes</button>
     </div>
 
     <!-- Section dynamique selon le choix -->
