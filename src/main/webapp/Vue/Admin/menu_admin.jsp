@@ -19,9 +19,9 @@
 
 <body>
 <!-- Header avec menu de navigation -->
-<div class="header">
+<div class="header header-admin">
     <img src="<%= request.getContextPath() %>/Images/cytech.png" class="logo">
-    <h2>Menu administrateur</h2>
+    <h2>Administrateur</h2>
     <nav>
         <ul>
             <li><a href="menu_admin.jsp">Accueil</a></li>

@@ -32,8 +32,25 @@
             return true;
         }
     </script>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+<!-- Header avec menu de navigation -->
+<div class="header header-professeur">
+    <img src="<%= request.getContextPath() %>/Images/cytech.png" class="logo">
+    <h2>Professeur</h2>
+    <nav>
+        <ul>
+            <li><a href="menu_Professeur.jsp">Accueil</a></li>
+            <li><a href="inscription_prof.jsp">Inscription Professeur</a></li>
+            <li><a href="saisieNotes_Professeur.jsp">Saisie de Notes</a></li>
+            <li><a href="traitementNotes.jsp">Traitement des Notes</a></li>
+        </ul>
+    </nav>
+    <form action="../../logout" method="Get" style="display: inline;">
+        <button type="submit">Déconnexion</button>
+    </form>
+</div>
 
 <%
     // Retrieve course and student data from the request

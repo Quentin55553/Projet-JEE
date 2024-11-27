@@ -9,12 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="436c3bc7-00f9-4fa1-8ac3-3f173fd788f3" name="Changes" comment="wip probleme servletLogin">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/CreationCoursServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/CreationCoursServlet_.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/InscriptionCoursServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/InscriptionCoursServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/InscriptionProfServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/InscriptionProfServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/ManageInscriptionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/ManageInscriptionServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/updateNoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/Professeur/updateNoteServlet.java" afterDir="false" />
+    <list default="true" id="436c3bc7-00f9-4fa1-8ac3-3f173fd788f3" name="Changes" comment="wip j'ai mis des trucs en commentaires qui marche pas juste pour pouvoir lancer">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jee/Controllers/Servlets/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/creationCours_Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/creationCours_Admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/gestionCours_Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/gestionCours_Admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/inscriptionsEtudiants_Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/inscriptionsEtudiants_Admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/inscriptionsProfesseurs_Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/inscriptionsProfesseurs_Admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/manageInscription.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/manageInscription.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/menu_admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Admin/menu_admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/inscription_prof.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/inscription_prof.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/menu_Professeur.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/menu_Professeur.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/saisieNotes_Professeur.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/saisieNotes_Professeur.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/traitementNotes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/Professeur/traitementNotes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Vue/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Vue/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +41,9 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -62,7 +75,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/victorandre/Desktop/27:11 14h/Projet-JEE",
+    "last_opened_file_path": "/Users/victorandre/Desktop/27:11 14h/Projet-JEE/src/main/webapp/Vue",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,11 +95,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/Vue" />
       <recent name="$PROJECT_DIR$/src/main/webapp/Vue/Admin" />
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/java/org/jee" />
-      <recent name="C:\Users\Quent\Documents\Projet-JEE-Principale\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Quent\Documents\Projet-JEE-Principale\src\main\webapp\Vue" />
@@ -217,7 +230,7 @@
       <workItem from="1732281727426" duration="454000" />
       <workItem from="1732456282790" duration="184000" />
       <workItem from="1732706820773" duration="2150000" />
-      <workItem from="1732713614311" duration="1487000" />
+      <workItem from="1732713614311" duration="8086000" />
     </task>
     <task id="LOCAL-00001" summary="wip probleme servletLogin">
       <option name="closed" value="true" />
@@ -227,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732706992832</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="wip j'ai mis des trucs en commentaires qui marche pas juste pour pouvoir lancer">
+      <option name="closed" value="true" />
+      <created>1732717402067</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732717402068</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +256,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="wip probleme servletLogin" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip probleme servletLogin" />
+    <MESSAGE value="wip j'ai mis des trucs en commentaires qui marche pas juste pour pouvoir lancer" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip j'ai mis des trucs en commentaires qui marche pas juste pour pouvoir lancer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

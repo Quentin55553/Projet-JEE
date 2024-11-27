@@ -19,9 +19,9 @@
 
 <body>
 <!-- Header avec menu de navigation -->
-<div class="header">
+<div class="header header-professeur">
     <img src="<%= request.getContextPath() %>/Images/cytech.png" class="logo">
-    <h2>Menu Professeur</h2>
+    <h2>Professeur</h2>
     <nav>
         <ul>
             <li><a href="menu_Professeur.jsp">Accueil</a></li>
