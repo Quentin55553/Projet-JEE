@@ -53,7 +53,7 @@
         <div>
             <form action="creationCours_Admin.jsp" method="post">
                 <input type="hidden" name="action" value="creation">
-                <input  type="submit" id="creationButton" value="Creer cours">
+                <button type="submit">Créer cours</button>
             </form>
             <h2>Tableau des Cours</h2>
             <table>
@@ -71,17 +71,17 @@
                     %>
                     <tr>
                         <td><%= cours.getNomCours()%></td>
-                        <td><%= cours.getPersonneByIdEnseignant() %></td>
+                        <td><%= cours.getPersonneByIdEnseignant().getIdPersonne() %></td>
                         <td>
                             <form action="creationCours_Admin.jsp" method="post">
                                 <input type="hidden" name="action" value="modification">
                                 <input type="hidden" name="id_cours" value="<%= cours.getIdCours()%>">
-                                <input  type="submit" class="modifButton" value="Modifier">
+                                <button type="submit">Modifier</button>
                             </form>
                             <form action="creationCours_Admin.jsp" method="post">
                                 <input type="hidden" name="action" value="suppression">
                                 <input type="hidden" name="id_cours" value="<%= cours.getIdCours()%>">
-                                <input  type="submit" class="deleteButton" value="Supprimer">
+                                <button type="submit" class="deleteButton">Supprimer</button>
                             </form>
                         </td>
                     </tr>
