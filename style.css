@@ -1,0 +1,287 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+.header-base h4{
+    text-align: center;
+}
+.loginLogo {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, +10%);
+    width: 250px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.form-container {
+    height: auto;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px 55px 38px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+
+
+.form-container h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+div {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.nouvel-eleve {
+    display: block;
+    margin: 20px auto 0;
+    text-align: center;
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nouvel-eleve:hover {
+    text-decoration: underline;
+}
+
+.etudiant_inscrit {
+    background-color: #4FAF62;
+    color: white;
+}
+
+.etudiant_EnCoursInscription {
+    background-color: #D7B159;
+    color: white;
+}
+
+.etudiant_refus {
+    background-color: #D75959;
+    color: white;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+button {
+    background-color: #007BFF;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+tr button {
+    padding: 8px 15px;
+    background-color: #28a745;
+}
+
+.form-container button {
+    background-color: #007BFF;
+    width: 100%;
+}
+
+.bouton-envoyer {
+    background-color: #007BFF;
+}
+
+button:not([id]):not([class]):hover, .bouton-envoyer:hover {
+    background-color: #0056b3;
+}
+
+.deleteButton {
+    background-color: #F32020;
+}
+
+.deleteButton:hover {
+    background-color: #C21B1B;
+}
+
+.modifButton {
+    background-color: #ACCB7D;
+}
+
+.modifButton:hover {
+    background-color: #7B9E5A;
+}
+
+.bouton-accepter {
+    background-color: #28a745;
+}
+
+.bouton-accepter:hover {
+    background-color: #1f7f34;
+}
+
+.bouton-refuser {
+    background-color: #D75959;
+}
+
+.bouton-refuser:hover {
+    background-color: #B84C4C;
+}
+
+@keyframes moveShapes {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes floatShapes {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(100px) translateY(50px);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+.background-shape1 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 20vw;
+    height: 20vw;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 123, 255, 0.2));
+    border-radius: 50%;
+    animation: floatShapes 8s ease-in-out infinite;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.background-shape2 {
+    position: absolute;
+    top: 60%;
+    right: 10%;
+    width: 18vw;
+    height: 10vw;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 123, 255, 0.2));
+    border-radius: 50%;
+    animation: floatShapes 8s ease-in-out infinite;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.background-shape {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 17vw;
+    height: 17vw;
+    background: radial-gradient(circle, rgba(255, 204, 153, 0.1), rgba(255, 165, 0, 0.5));
+    border-radius: 50%;
+    animation: moveShapes 10s linear infinite;
+    opacity: 0.2;
+    z-index: -1;
+}
+.textecontenuprincipal {
+    text-align: center; /* Centre le contenu */
+    padding: 20px; /* Ajoute de l'espace intérieur */
+    margin: 20px auto; /* Centre horizontalement et ajoute de l'espace vertical */
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    border-radius: 10px; /* Arrondi des coins */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre */
+    max-width: 800px; /* Limite la largeur */
+}
+
+.textecontenuprincipal h4 {
+    font-size: 24px; /* Taille du texte de l'en-tête */
+    font-weight: bold; /* Texte en gras */
+    color: #007BFF; /* Couleur bleue pour le titre */
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.action {
+    display: flex; /* Active le mode flexbox */
+    flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+    justify-content: center; /* Centre horizontalement les boutons */
+    gap: 15px; /* Espacement entre les boutons */
+    margin-top: 20px; /* Ajoute un espacement en haut */
+}
+
+.action button {
+    background-color: #007BFF; /* Couleur de fond bleue */
+    color: white; /* Texte blanc */
+    padding: 10px 20px; /* Ajoute de l'espace intérieur au bouton */
+    border: none; /* Supprime les bordures */
+    border-radius: 5px; /* Arrondi des coins */
+    cursor: pointer; /* Change le curseur au survol */
+    font-size: 16px; /* Taille du texte */
+    transition: background-color 0.3s ease; /* Animation sur le survol */
+}
+
+.action button:hover {
+    background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+#dynamic-content {
+    margin-top: 30px; /* Espacement en haut */
+    font-size: 16px; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+}
+
+.textecontenuprincipal {
+    text-align: center; /* Centre le contenu */
+    padding: 20px; /* Ajoute de l'espace intérieur */
+    margin: 20px auto; /* Centre horizontalement et ajoute de l'espace vertical */
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    border-radius: 10px; /* Arrondi des coins */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre */
+    max-width: 800px; /* Limite la largeur */
+}
+
