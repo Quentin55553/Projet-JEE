@@ -1,8 +1,8 @@
 package org.jee.entity;
 
 import jakarta.persistence.*;
-
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 public class Cours {
@@ -27,7 +27,9 @@ public class Cours {
     @JoinColumn(name = "id_enseignant", referencedColumnName = "id_personne")
     private Personne personneByIdEnseignant;
 
-    // Aucune relation ManyToMany ici
+    // Relation OneToMany avec Inscription
+    @OneToMany(mappedBy = "cours", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Inscription> inscriptions;
 
     // Getters et setters
     public int getIdCours() {
@@ -76,5 +78,13 @@ public class Cours {
 
     public void setPersonneByIdEnseignant(Personne personneByIdEnseignant) {
         this.personneByIdEnseignant = personneByIdEnseignant;
+    }
+
+    public List<Inscription> getInscriptions() {
+        return inscriptions;
+    }
+
+    public void setInscriptions(List<Inscription> inscriptions) {
+        this.inscriptions = inscriptions;
     }
 }
