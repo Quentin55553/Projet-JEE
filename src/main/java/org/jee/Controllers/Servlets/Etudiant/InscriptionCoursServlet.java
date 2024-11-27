@@ -67,7 +67,7 @@ public class InscriptionCoursServlet extends HttpServlet {
             transaction.commit();
 
             // Redirect to the success page or refresh the course list
-            response.sendRedirect(request.getContextPath()+"/Vue/Etudiant/inscriptionsCours_Etudiant.jsp");
+            response.sendRedirect(request.getContextPath()+"/DemandeInscriptionServlet");
         } catch (Exception e) {
             e.printStackTrace();
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An error occurred while processing the inscription.");
