@@ -3,6 +3,8 @@
 <%@ page import="org.jee.entity.Cours" %>
 <%@ page import="java.util.*" %>
 <%@ page import="com.google.gson.Gson" %>
+<%@ page import="com.google.gson.GsonBuilder" %>
+<%@ page import="java.net.URLEncoder" %>
 
 
 <!DOCTYPE html>
@@ -15,7 +17,7 @@
 
     <body>
         <%
-            List<Resultat> resultats = (List<Resultat>) request.getAttribute("resultats");
+            List<Resultat> resultats = (List<Resultat>) session.getAttribute("resultats");
             Map<Cours, List<Resultat>> coursNotesMap = new HashMap<>();
 
             Personne etudiant = resultats.get(0).getPersonneByIdEtudiant();
@@ -33,13 +35,14 @@
             java.text.DecimalFormat df = new java.text.DecimalFormat("#.##");
             String moyenneGlobaleFormatee = df.format(moyenneGlobale);
 
-            Gson gson = new Gson();
+            Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
             String resultatsJson = gson.toJson(resultats);
+            resultatsJson = URLEncoder.encode(resultatsJson, "UTF-8");
         %>
 
         <div class="header">
             <h2>Menu étudiant : <%= etudiant.getPrenom() + " " + etudiant.getNom() %></h2>
-            <form action="logout_" method="GET">
+            <form action="${pageContext.request.contextPath}/logout" method="GET">
                 <button type="submit">Déconnexion</button>
             </form>
         </div>
@@ -48,7 +51,7 @@
 
         <form action="${pageContext.request.contextPath}/ReleveResultatServlet" method="POST">
             <input type="hidden" name="moyenneGlobale" value="<%= moyenneGlobaleFormatee %>">
-            <input type="hidden" name="resultatsJson" value='<%= resultatsJson %>'>
+            <input type="hidden" name="resultatsJson" value="<%= resultatsJson %>">
             <button type="submit">Génerer un relevé de notes</button>
         </form>
 
@@ -79,11 +82,18 @@
                             float moyenneCours = sommeNotesCours / notesCours.size();
                             String moyenneCoursFormatee = df.format(moyenneCours);
                     %>
-                    <tr>
-                        <td><a href="detailsCours?idEtudiant=<%= etudiant.getIdPersonne() %>&idCours=<%= cours.getIdCours() %>"><%= cours.getNomCours() %></a></td>
-                        <td><%= cours.getPersonneByIdEnseignant().getPrenom() + " " + cours.getPersonneByIdEnseignant().getNom() %></td>
-                        <td><%= moyenneCoursFormatee %>/20</td>
-                    </tr>
+                    <form action="<%= request.getContextPath() %>/MatiereServlet" id="coursForm" method="GET">
+                        <tr>
+                            <td>
+                                <input type="hidden" name="idCours" value="<%= cours.getIdCours() %>">
+                                <a href="javascript:void(0);" onclick="document.getElementById('coursForm').submit();" class="link-style">
+                                    <%= cours.getNomCours() %>
+                                </a>
+                            </td>
+                            <td><%= cours.getPersonneByIdEnseignant().getPrenom() + " " + cours.getPersonneByIdEnseignant().getNom() %></td>
+                            <td><%= moyenneCoursFormatee %>/20</td>
+                        </tr>
+                    </form>
                     <%
                         }
                     %>
