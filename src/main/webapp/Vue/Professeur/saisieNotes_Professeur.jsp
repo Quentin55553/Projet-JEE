@@ -5,20 +5,6 @@
 <html>
 <head>
   <title>Saisie des Notes - Professeur</title>
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
   <link rel="stylesheet" href="<%= request.getContextPath() %>/Vue/style.css">
 </head>
 <body>
@@ -29,16 +15,15 @@
   <nav>
     <ul>
       <li><a href="<%= request.getContextPath() %>/Vue/Professeur/menu_Professeur.jsp">Accueil</a></li>
-      <li><a href="<%= request.getContextPath() %>/Vue/Professeur/inscription_prof.jsp">Inscription Professeur</a></li>
-      <li><a href="<%= request.getContextPath() %>/Vue/Professeur/saisieNotes_Professeur.jsp">Saisie de Notes</a></li>
-      <li><a href="<%= request.getContextPath() %>/Vue/Professeur/traitementNotes.jsp">Traitement des Notes</a></li>
+      <li><a href="<%= request.getContextPath() %>/InscriptionProf">Inscription Professeur</a></li>
+      <li><a href="<%= request.getContextPath() %>/Servlet_Debut_Note_Prof">Saisie de Notes</a></li>
     </ul>
   </nav>
-  <form action="../../logout" method="Get" style="display: inline;">
+  <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
     <button type="submit">Déconnexion</button>
   </form>
 </div>
-<h1>Saisie des Notes - Professeur</h1>
+<h1 class="no-data">Saisie des Notes - Professeur</h1>
 <form action="<%= request.getContextPath() %>/NoteProfServlet" method="post">
   <table>
     <thead>

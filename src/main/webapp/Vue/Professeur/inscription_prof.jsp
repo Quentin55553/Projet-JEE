@@ -9,49 +9,10 @@
     <title>Demandes d'inscription en attente</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/Vue/style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
-        }
-        h1 {
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        table th {
-            background-color: #f2f2f2;
-        }
-        table tr:hover {
-            background-color: #f9f9f9;
-        }
-        .no-data {
-            font-size: 18px;
-            color: #666;
-            margin-top: 20px;
-        }
         textarea {
             width: 100%;
             height: 50px;
             margin-top: 5px;
-        }
-        button {
-            margin-top: 10px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        .accept-btn {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
         }
         .deny-btn {
             background-color: #f44336;
@@ -68,16 +29,15 @@
     <nav>
         <ul>
             <li><a href="<%= request.getContextPath() %>/Vue/Professeur/menu_Professeur.jsp">Accueil</a></li>
-            <li><a href="<%= request.getContextPath() %>/Vue/Professeur/inscription_prof.jsp">Inscription Professeur</a></li>
-            <li><a href="<%= request.getContextPath() %>/Vue/Professeur/saisieNotes_Professeur.jsp">Saisie de Notes</a></li>
-            <li><a href="<%= request.getContextPath() %>/Vue/Professeur/traitementNotes.jsp">Traitement des Notes</a></li>
+            <li><a href="<%= request.getContextPath() %>/InscriptionProf">Inscription Professeur</a></li>
+            <li><a href="<%= request.getContextPath() %>/Servlet_Debut_Note_Prof">Saisie de Notes</a></li>
         </ul>
     </nav>
     <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
         <button type="submit">Déconnexion</button>
     </form>
 </div>
-<h1>Demandes d'inscription en attente</h1>
+<h1 class="no-data">Demandes d'inscription en attente</h1>
 
 <%
     // Retrieve the list of inscriptions passed from the servlet
@@ -109,7 +69,9 @@
         <td><%= courseName %></td>
         <td>
             <form method="post" action="<%= request.getContextPath() %>/ManageInscriptionServlet">
-                <textarea name="commentaire" placeholder="Ajoutez un commentaire ici (optionnel)"></textarea>
+                <label>
+                    <textarea name="commentaire" placeholder="Ajoutez un commentaire ici (optionnel)"></textarea>
+                </label>
         </td>
         <td>
             <input type="hidden" name="studentEmail" value="<%= studentEmail %>">

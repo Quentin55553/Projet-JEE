@@ -1,24 +1,11 @@
 ﻿<%@ page import="org.jee.entity.Personne" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.jee.entity.Cours" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Saisie des Notes</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
     <script>
         // Validate that all notes are filled before form submission
         function validateForm() {
@@ -42,9 +29,8 @@
     <nav>
         <ul>
             <li><a href="<%= request.getContextPath() %>/Vue/Professeur/menu_Professeur.jsp">Accueil</a></li>
-            <li><a href="<%= request.getContextPath() %>/Vue/Professeur/inscription_prof.jsp">Inscription Professeur</a></li>
-            <li><a href="<%= request.getContextPath() %>/Vue/Professeur/saisieNotes_Professeur.jsp">Saisie de Notes</a></li>
-            <li><a href="<%= request.getContextPath() %>/Vue/Professeur/traitementNotes.jsp">Traitement des Notes</a></li>
+            <li><a href="<%= request.getContextPath() %>/InscriptionProf">Inscription Professeur</a></li>
+            <li><a href="<%= request.getContextPath() %>/Servlet_Debut_Note_Prof">Saisie de Notes</a></li>
         </ul>
     </nav>
     <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
@@ -61,7 +47,7 @@
     if (coursObject != null) {
         Cours cours = (Cours) coursObject;
 %>
-<h2>Cours: <%= cours.getNomCours() %></h2>
+<h2 class="no-data">Cours: <%= cours.getNomCours() %></h2>
 
 <%
     if (students != null && !students.isEmpty()) {

@@ -3,7 +3,6 @@ body {
     background-color: #f9f9f9;
 }
 
-
 .loginLogo {
     display: block;
     position: absolute;
@@ -440,4 +439,12 @@ button:not([id]):not([class]):hover, .bouton-envoyer:hover {
 .header-etudiant form button:hover {
     background-color: #0c5460; /* Fond au survol */
     color: white;
+}
+
+.no-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%; /* Adjust as needed to ensure vertical centering */
 }

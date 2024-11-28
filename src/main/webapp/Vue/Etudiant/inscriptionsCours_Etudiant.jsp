@@ -1,49 +1,37 @@
-﻿<%@ page import="org.jee.entity.Cours" %>
+<%@ page import="org.jee.entity.Cours" %>
+<%@ page import="org.jee.entity.Personne" %>
 <%@ page import="java.util.List" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    // Vérification de l'utilisateur connecté et de son rôle
+    Personne user = (Personne) session.getAttribute("user");
+    if (user == null || user.getRole() != 3) {
+        response.sendRedirect(request.getContextPath() + "/Vue/login.jsp");
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cours disponibles pour inscription</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/Vue/style.css">
 </head>
 <body>
+<div class="header header-etudiant">
+    <img src="<%= request.getContextPath() %>/Images/cytech.png" class="logo">
+    <h2>Étudiant</h2>
+    <nav>
+        <ul>
+            <li><a href="<%= request.getContextPath() %>/MenuEtudiantServlet">Accueil</a></li>
+            <li><a href="<%= request.getContextPath() %>/DemandeInscriptionServlet">Inscrire à un cours</a></li>
+        </ul>
+    </nav>
+    <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
+        <button type="submit">Déconnexion</button>
+    </form>
+</div>
 <h1>Cours disponibles pour inscription</h1>
 
 <%
@@ -76,7 +64,7 @@
         <td><%= cours.getDescription() %></td>
         <td><%= cours.getDateDebut() %></td>
         <td><%= cours.getDateFin() %></td>
-        <td><%= cours.getPersonneByIdEnseignant().getNom() %> <%= cours.getPersonneByIdEnseignant().getPrenom() %></td>
+        <td><%= cours.getPersonneByIdEnseignant().getPrenom() %> <%= cours.getPersonneByIdEnseignant().getNom() %></td>
         <td>
             <form action="InscriptionCoursServlet" method="post">
                 <input type="hidden" name="idCours" value="<%= cours.getIdCours() %>">

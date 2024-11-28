@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tableau des Cours</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/Vue/style.css">
 </head>
 
 <body>
@@ -28,9 +28,6 @@
             <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsEtudiants_Admin.jsp">Créer profil étudiant</a></li>
             <li><a href="<%= request.getContextPath() %>/Vue/Admin/inscriptionsProfesseurs_Admin.jsp">Créer profil professeur</a></li>
             <li><a href="<%= request.getContextPath() %>/Vue/Admin/gestionCours_Admin.jsp">Gestion de cours</a></li>
-            <li><a href="<%= request.getContextPath() %>/Vue/Admin/manageInscription.jsp">Gestion des inscriptions</a></li>
-            <li><a href="<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp">Créer profil professeur</a></li>
-
         </ul>
     </nav>
     <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
@@ -47,8 +44,6 @@
         <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/inscriptionsEtudiants_Admin.jsp'">Créer profil étudiant</button>
         <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/inscriptionsProfesseurs_Admin.jsp'">Créer profil professeur</button>
         <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/gestionCours_Admin.jsp'">Accéder à la gestion de cours</button>
-        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/manageInscription.jsp'">Gestion des inscriptions</button>
-        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp'">Créer profil professeur</button>
     </div>
 
     <!-- Section dynamique selon le choix -->
