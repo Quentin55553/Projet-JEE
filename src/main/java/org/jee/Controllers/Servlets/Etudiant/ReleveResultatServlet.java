@@ -17,7 +17,6 @@ import org.jee.entity.Personne;
 import org.jee.entity.Resultat;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
@@ -72,7 +71,7 @@ public class ReleveResultatServlet extends HttpServlet {
 
         image.scaleToFit(100, 100);
 
-        // Positionne l'image en haut à droite
+        // Positionne l'image en haut à gauche
         float x = document.left() - image.getScaledWidth() + 90;
         float y = document.top() - image.getScaledHeight() + 20;
         image.setAbsolutePosition(x, y);
