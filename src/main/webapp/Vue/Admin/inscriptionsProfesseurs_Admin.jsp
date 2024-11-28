@@ -39,7 +39,7 @@
 <br><br><br><br><br><br><br><br><br><br><br>
 <!-- Form container for professor registration -->
 <div class="form-container">
-  <h2>Inscription Professeur</h2>
+  <h3>Inscription Professeur</h3>
   <form action="<%= request.getContextPath() %>/CreeEP" method="POST">
     <label for="nom">Nom</label>
     <input type="text" id="nom" name="nom" required>

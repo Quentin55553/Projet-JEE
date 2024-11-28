@@ -38,10 +38,10 @@
 
 <!-- Contenu principal -->
 <div class="main-content">
-    <h1>Bienvenue, <%= user.getPrenom() %> <%= user.getNom() %>!</h1>
+    <h1 class="no-data">Bienvenue, <%= user.getPrenom() %> <%= user.getNom() %>!</h1>
 
     <!-- Boutons d'action -->
-    <div class="actions">
+    <div class="no-data actions">
         <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/inscriptionsEtudiants_Admin.jsp'">Créer profil étudiant</button>
         <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/inscriptionsProfesseurs_Admin.jsp'">Créer profil professeur</button>
         <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/gestionCours_Admin.jsp'">Accéder à la gestion de cours</button>
@@ -50,7 +50,7 @@
 
     <!-- Section dynamique selon le choix -->
     <div id="dynamic-content">
-        <p>Sélectionnez une action dans le menu ou cliquez sur un des boutons ci-dessus pour commencer.</p>
+        <p class="no-data">Sélectionnez une action dans le menu ou cliquez sur un des boutons ci-dessus pour commencer.</p>
     </div>
 </div>
 </body>

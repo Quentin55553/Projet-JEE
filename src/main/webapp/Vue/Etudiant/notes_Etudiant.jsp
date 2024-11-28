@@ -56,13 +56,6 @@
         </div>
 
         <br>
-
-        <form action="${pageContext.request.contextPath}/ReleveResultatServlet" method="POST">
-            <input type="hidden" name="moyenneGlobale" value="<%= moyenneGlobaleFormatee %>">
-            <input type="hidden" name="resultatsJson" value="<%= resultatsJson %>">
-            <button type="submit">Génerer un relevé de notes</button>
-        </form>
-
         <div>
             <h3>Moyenne des notes : <%= moyenneGlobaleFormatee %>/20</h3>
         </div>
@@ -108,5 +101,11 @@
                 </tbody>
             </table>
         </div>
+        <br>
+        <form action="${pageContext.request.contextPath}/ReleveResultatServlet" method="POST" class="no-data">
+            <input type="hidden" name="moyenneGlobale" value="<%= moyenneGlobaleFormatee %>">
+            <input type="hidden" name="resultatsJson" value="<%= resultatsJson %>">
+            <button type="submit">Génerer un relevé de notes</button>
+        </form>
     </body>
 </html>

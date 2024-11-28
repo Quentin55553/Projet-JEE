@@ -62,7 +62,7 @@ public class CreeEtuProfServlet extends HttpServlet {
 
             // Affichage du résultat
             response.setContentType("text/html");
-            response.getWriter().println("<h1>Inscription réussie</h1>");
+            response.sendRedirect("Vue/Admin/menu_admin.jsp");
 
         } catch (ConstraintViolationException e) {
             if (tx != null) {

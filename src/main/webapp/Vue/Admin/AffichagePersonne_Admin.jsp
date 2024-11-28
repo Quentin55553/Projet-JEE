@@ -59,9 +59,9 @@
 %>
 
 <% if("etudiant".equals(typePersonne)){%>
-<h2>Liste des étudiants</h2>
+<h3>Liste des étudiants</h3>
 <% } else if ("professeur".equals(typePersonne)){ %>
-<h2> Liste des professeurs</h2><%}%>
+<h3> Liste des professeurs</h3><%}%>
 
 <table>
     <thead>
@@ -95,6 +95,18 @@
         <td><%= p.getNom() %></td>
         <td><%= p.getPrenom()%></td>
         <td><%= p.getContact()%></td>
+        <td>
+            <form action="<%= request.getContextPath() %>/Vue/Admin/ModificationPresonne_Admin.jsp" method="post">
+                <input type="hidden" name="action" value="modification">
+                <input type="hidden" name="idPersonne" value="<%= id_etudiant%>">
+                <button type="submit">Modifier</button>
+            </form>
+            <form action="<%= request.getContextPath() %>/Vue/Admin/ModificationPresonne_Admin.jsp" method="post">
+                <input type="hidden" name="action" value="suppression">
+                <input type="hidden" name="idPersonne" value="<%= id_etudiant%>">
+                <button type="submit" class="deleteButton">Supprimer</button>
+            </form>
+        </td>
     </tr>
 
     <% }

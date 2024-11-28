@@ -52,7 +52,7 @@
 <div class="form-container">
 
     <% if ("creation".equals(actionAdmin)) {%>
-    <h2>Création de Cours</h2>
+    <h3>Création de Cours</h3>
     <form action="<%= request.getContextPath() %>/CreeCours" method="POST">
         <input type="hidden" name="action" value="creation">
 

@@ -21,7 +21,7 @@
 <body>
 <div class="header header-etudiant">
     <img src="<%= request.getContextPath() %>/Images/cytech.png" class="logo">
-    <h2>Étudiant</h2>
+    <h3>Étudiant</h3>
     <nav>
         <ul>
             <li><a href="<%= request.getContextPath() %>/MenuEtudiantServlet">Accueil</a></li>
@@ -33,7 +33,7 @@
         <button type="submit">Déconnexion</button>
     </form>
 </div>
-<h1>Cours disponibles pour inscription</h1>
+<h3>Cours disponibles pour inscription</h3>
 
 <%
     // Récupérer la liste des cours disponibles depuis la requête

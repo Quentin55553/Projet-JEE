@@ -41,13 +41,13 @@ public class Personne {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "personneByIdEnseignant")
+    @OneToMany(mappedBy = "personneByIdEnseignant", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Collection<Cours> coursByIdPersonne;
 
-    @OneToMany(mappedBy = "personneByIdEtudiant")
+    @OneToMany(mappedBy = "personneByIdEtudiant", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Collection<Inscription> inscriptionsByIdPersonne;
 
-    @OneToMany(mappedBy = "personneByIdEtudiant")
+    @OneToMany(mappedBy = "personneByIdEtudiant", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Collection<Resultat> resultatsByIdPersonne;
 
 

@@ -40,7 +40,7 @@
 <br><br><br><br><br>
 <!-- Form container for student registration -->
 <div class="form-container">
-  <h2>Inscription Etudiant</h2>
+  <h3>Inscription Etudiant</h3>
   <form action="<%= request.getContextPath() %>/CreeEP" method="POST">
     <label for="nom">Nom</label>
     <input type="text" id="nom" name="nom" required>

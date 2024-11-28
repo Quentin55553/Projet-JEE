@@ -50,8 +50,7 @@
 <!-- Course Information -->
 <div>
     <h3>Informations sur le Cours</h3>
-    <p><strong>Nom du Cours:</strong> <%= cours.getNomCours() %></p>
-    <p><strong>Professeur:</strong> <%= cours.getPersonneByIdEnseignant().getPrenom() %> <%= cours.getPersonneByIdEnseignant().getNom() %></p>
+    <p class="no-data"><strong>Nom du Cours : </strong> <%= cours.getNomCours() %>   -   <strong>Professeur : </strong> <%= cours.getPersonneByIdEnseignant().getPrenom() %> <%= cours.getPersonneByIdEnseignant().getNom() %></p>
 </div>
 
 <!-- Results Table -->

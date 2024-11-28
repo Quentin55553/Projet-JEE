@@ -17,8 +17,7 @@
     List<Inscription> inscriptions = (List<Inscription>) request.getAttribute("inscriptions");
 
     // Récupération des moyennes des cours et des cours
-    Map<Integer, Double> courseAverages = (Map<Integer, Double>) request.getAttribute("courseAverages");
-    Map<Integer, Cours> courses = (Map<Integer, Cours>) request.getAttribute("courses");
+    List<Cours> courses = (List<Cours>) request.getAttribute("courses");
 %>
 
 
@@ -84,33 +83,28 @@
 
         <!-- Section Moyenne des Cours -->
         <div>
-            <h3>Moyennes des Cours</h3>
+            <h3>Mes Cours :</h3>
             <table>
                 <thead>
                 <tr>
                     <th>Nom du Cours</th>
                     <th>Professeur</th>
-                    <th>Moyenne</th>
                     <th>Détails</th>
                 </tr>
                 </thead>
                 <tbody>
                 <%
-                    if (courseAverages != null && courses != null && !courseAverages.isEmpty()) {
-                        for (Map.Entry<Integer, Double> entry : courseAverages.entrySet()) {
-                            int courseId = entry.getKey();
-                            double average = entry.getValue();
-                            Cours cours = courses.get(courseId); // Retrieve the Cours object from the map
+                    if (courses != null) {
+                        for (Cours cours : courses) {
                             if (cours != null) {
                 %>
                 <tr>
                     <form action="<%= request.getContextPath() %>/MatiereServlet" method="GET">
                         <td><%= cours.getNomCours() %></td>
-                        <td><%= cours.getPersonneByIdEnseignant().getNom() %></td>
-                        <td><%= String.format("%.2f", average) %></td>
+                        <td><%= cours.getPersonneByIdEnseignant().getPrenom() %> <%= cours.getPersonneByIdEnseignant().getNom() %></td>
                         <td>
                             <!-- Hidden input to pass the course ID -->
-                            <input type="hidden" name="idCours" value="<%= courseId %>">
+                            <input type="hidden" name="idCours" value="<%= cours.getIdCours() %>">
                             <button type="submit">Voir Détails</button>
                         </td>
                     </form>

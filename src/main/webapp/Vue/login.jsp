@@ -29,8 +29,6 @@
     <% if (request.getParameter("error") != null) { %>
     <p class="error-message">Identifiants invalides. Veuillez réessayer.</p>
     <% } %>
-
-    <a href="<%= request.getContextPath() %>/Vue/inscription.jsp" class="nouvel-eleve">Nouvel élève</a>
 </div>
 </body>
 </html>
