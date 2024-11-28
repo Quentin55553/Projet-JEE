@@ -2,7 +2,6 @@
 <%@ page import="org.jee.entity.Resultat" %>
 <%@ page import="org.jee.entity.Cours" %>
 <%@ page import="java.util.*" %>
-<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="com.google.gson.Gson" %>
 
 
