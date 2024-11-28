@@ -15,8 +15,19 @@ import org.jee.Util.HibernateUtil;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Servlet destinée à l'attribution des notes par les Professeurs pour les étudiants.
+ */
 @WebServlet("/NoteProfServlet")
 public class NoteProfServlet extends HttpServlet {
+
+    /**
+     * Répond par la liste des étudiants inscrit à la matière indiquée.
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idCoursStr = request.getParameter("idCours");
@@ -29,17 +40,17 @@ public class NoteProfServlet extends HttpServlet {
         int idCours = Integer.parseInt(idCoursStr);
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            // Begin a transaction (optional in some cases, depending on the operations)
             session.beginTransaction();
 
-            // Fetch the course (Cours) object based on the provided ID
             Cours cours = session.get(Cours.class, idCours);
             if (cours == null) {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND, "Cours introuvable.");
                 return;
             }
-
-            // Query for all Inscription objects where the state is 1 (accepted students)
+            
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // A quoi sert cette partie ?
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Query<Inscription> inscriptionQuery = session.createQuery(
                     "FROM Inscription WHERE cours.idCours = :idCours AND etat = 1", Inscription.class);
             inscriptionQuery.setParameter("idCours", idCours);
@@ -49,27 +60,22 @@ public class NoteProfServlet extends HttpServlet {
                 request.getRequestDispatcher("Vue/Professeur/traitementNotes.jsp").forward(request, response);
                 return;
             }
-
-            // Collect the list of students who are accepted for this course
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
             List<Personne> students = session.createQuery(
                             "SELECT i.personneByIdEtudiant FROM Inscription i WHERE i.cours.idCours = :idCours AND i.etat = 1", Personne.class)
                     .setParameter("idCours", idCours)
                     .list();
 
-            // Log the details of students and course for debugging purposes
-            System.out.println("Cours Name: " + cours.getNomCours());
+            System.out.println("nom Cours: " + cours.getNomCours());
             for (Personne student : students) {
                 System.out.println("Student: " + student.getNom() + " " + student.getPrenom());
             }
 
-            // Send the course and list of students as request attributes to the JSP page
-
             request.setAttribute("students", students);
 
-            // Forward the request to the JSP for further processing
             request.getRequestDispatcher("Vue/Professeur/traitementNotes.jsp").forward(request, response);
 
-            // Commit the transaction if necessary
             session.getTransaction().commit();
 
         } catch (Exception e) {
