@@ -15,8 +15,17 @@ import org.jee.Util.HibernateUtil;
 
 import java.io.IOException;
 
+/**
+ * La servlet responsable de la connexion et de la redirection des utilisateurs selon leurs rôles.
+ */
+
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+
+    /**
+     * Verifie que l'utilisateur existe dans la base et le redirige selon son rôle vers les menu Etudiant, Professeur ou 
+     * Administrateur.
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idPersonne = request.getParameter("idPersonne");
