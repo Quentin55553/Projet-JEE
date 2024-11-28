@@ -61,10 +61,36 @@ public class ControleurPersonne extends HttpServlet {
         List<Personne> personnesListByRole = hibernateSession.createQuery(
                 "FROM Personne WHERE role = :role",
                 Personne.class
-        ).list();
+        ).setParameter("role", role).list();
         hibernateSession.close();
 
         return personnesListByRole;
+    }
+
+    /**
+     * Permet d'obtenir une liste d'étudiants correspondant aux filtres par la gauche.
+     */
+    public static List<Personne> getPersonnesListByFilter(int role, String like_id, String like_nom, String like_prenom, String like_contact) {
+
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+        Session hibernateSession = factory.openSession();
+        //Il ne faut pas faire de recherche par LIKE si les paramètres sont null
+        List<Personne> personnesListByFilter = hibernateSession.createQuery(
+                        "FROM Personne WHERE role = :role " +
+                                "AND (:id IS NULL OR idPersonne LIKE :id) " +
+                                "AND (:nom IS NULL OR nom LIKE :nom) " +
+                                "AND (:prenom IS NULL OR prenom LIKE :prenom) " +
+                                "AND (:contact IS NULL OR contact LIKE :contact)",
+                        Personne.class
+                )
+                .setParameter("role", role)
+                .setParameter("id", like_id != null && !like_id.isEmpty() ? "%" + like_id + "%" : null)
+                .setParameter("nom", like_nom != null && !like_nom.isEmpty() ? "%" + like_nom + "%" : null)
+                .setParameter("prenom", like_prenom != null && !like_prenom.isEmpty() ? "%" + like_prenom + "%" : null)
+                .setParameter("contact", like_contact != null && !like_contact.isEmpty() ? "%" + like_contact + "%" : null)
+                .list();
+
+        return personnesListByFilter;
     }
 
 }
