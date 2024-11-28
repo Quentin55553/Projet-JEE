@@ -10,11 +10,10 @@ import org.jee.entity.Cours;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * La servlet est utilisée pour obtenir des informations sur les objets de la classe Cours
+ */
 public class ControleurCours extends HttpServlet {
-
-    private Integer current_cours_id;
-
     /**
      * Ouvre une session hibernate, accède à la base de données et renvoie la liste des cours existant.
      * */
@@ -32,6 +31,10 @@ public class ControleurCours extends HttpServlet {
         return coursList;
     }
 
+    /**
+     * @param id_cours
+     * @return L'objet Cours associé à l'id.
+     */
     public static Cours getCoursByID(Integer id_cours){
         List<Cours> coursList = getCoursList();
         for(Cours cours : coursList){
@@ -41,13 +44,5 @@ public class ControleurCours extends HttpServlet {
         }
 
         return null;
-    }
-
-    public Integer getCurrent_cours_id() {
-        return current_cours_id;
-    }
-
-    public void setCurrent_cours_id(Integer current_cours_id) {
-        this.current_cours_id = current_cours_id;
     }
 }
