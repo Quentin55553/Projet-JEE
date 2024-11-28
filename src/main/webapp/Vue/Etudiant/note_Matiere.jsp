@@ -39,6 +39,7 @@
         <ul>
             <li><a href="<%= request.getContextPath() %>/MenuEtudiantServlet">Accueil</a></li>
             <li><a href="<%= request.getContextPath() %>/DemandeInscriptionServlet">Inscrire à un cours</a></li>
+            <li><a href="<%= request.getContextPath() %>/DebutReleveResultatServlet">Générer le relevé de notes</a></li>
         </ul>
     </nav>
     <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
