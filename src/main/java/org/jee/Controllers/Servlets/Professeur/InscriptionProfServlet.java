@@ -18,11 +18,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * La servlet utilisée pour gérer les inscriptions des étudiants, du point de vue du professeur.
+ * Voire page inscription_prof.jsp.
+ */
 @WebServlet("/InscriptionProf")
 public class InscriptionProfServlet extends HttpServlet {
+
+    /**
+     * Renvoie la liste des étudiants ayant postuler aux cours de ce professeur.
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Retrieve the user (Personne) object from the session
         Personne user = (Personne) request.getSession().getAttribute("user");
 
         if (user == null) {
@@ -30,14 +37,11 @@ public class InscriptionProfServlet extends HttpServlet {
             return;
         }
 
-        // Retrieve the ID of the user (professor)
         String sessionId = user.getIdPersonne();
 
-        // Open Hibernate session
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction tx = session.beginTransaction();
 
-            // Fetch the professor entity by ID
             Personne professor = session.get(Personne.class, sessionId);
 
             if (professor == null) {
@@ -45,17 +49,13 @@ public class InscriptionProfServlet extends HttpServlet {
                 return;
             }
 
-            // Get the courses taught by this professor
             List<Cours> courses = new ArrayList<>(professor.getCoursByIdPersonne());
 
-            // List to hold inscription details
             List<Map<String, String>> inscriptionDetails = new ArrayList<>();
 
-            // Iterate over each course and retrieve inscriptions with `etat = 0`
             for (Cours course : courses) {
                 for (Inscription inscription : course.getInscriptions()) {
-                    if (inscription.getEtat() == 0) { // Check the state
-                        // Fetch student and course details
+                    if (inscription.getEtat() == 0) {
                         Personne student = inscription.getPersonneByIdEtudiant();
                         Map<String, String> details = new HashMap<>();
                         details.put("studentName", student.getNom() + " " + student.getPrenom());
@@ -69,7 +69,7 @@ public class InscriptionProfServlet extends HttpServlet {
             request.setAttribute("inscriptionDetails", inscriptionDetails);
             request.getRequestDispatcher("/Vue/Professeur/inscription_prof.jsp").forward(request, response);
 
-            tx.commit(); // Commit transaction
+            tx.commit();
         } catch (Exception e) {
             e.printStackTrace();
             response.getWriter().println("Error occurred while processing inscriptions.");
