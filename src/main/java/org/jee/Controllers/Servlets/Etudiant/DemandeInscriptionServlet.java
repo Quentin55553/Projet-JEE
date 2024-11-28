@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
+import org.jee.Controllers.Servlets.Admin.ControleurCours;
 import org.jee.Util.HibernateUtil;
 import org.jee.entity.Cours;
 import org.jee.entity.Inscription;
@@ -16,9 +17,15 @@ import org.jee.entity.Personne;
 import java.io.IOException;
 import java.util.List;
 
-
+/**
+ * Servlet utilisé pour permettre aux étudiants de postuler aux cours.
+ */
 @WebServlet("/DemandeInscriptionServlet")
 public class DemandeInscriptionServlet extends HttpServlet {
+
+    /**
+     * Définit la liste des cours auquel l'étudiant n'est pas déjà inscrit et la renvoie.
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Récupérer l'utilisateur (Personne) connecté depuis la session
@@ -46,8 +53,7 @@ public class DemandeInscriptionServlet extends HttpServlet {
                     .toList();
 
             // Récupérer tous les cours
-            Query<Cours> coursQuery = hibernateSession.createQuery("FROM Cours", Cours.class);
-            List<Cours> tousLesCours = coursQuery.list();
+            List<Cours> tousLesCours = ControleurCours.getCoursList();
 
             // Créer une deuxième collection des cours auxquels l'étudiant n'est pas inscrit
             List<Cours> coursNonInscrits = tousLesCours.stream()
