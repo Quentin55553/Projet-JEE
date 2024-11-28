@@ -15,6 +15,9 @@ import org.jee.entity.Personne;
 import java.io.IOException;
 import java.util.Collection;
 
+/**
+ * La servlet gére l'acceptation ou le refus d'un postulant au cours indiqué.
+ */
 @WebServlet("/ManageInscriptionServlet")
 public class ManageInscriptionServlet extends HttpServlet {
     @Override
@@ -27,7 +30,6 @@ public class ManageInscriptionServlet extends HttpServlet {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction tx = session.beginTransaction();
 
-            // Retrieve the student (Personne) entity using the email
             Personne student = session.get(Personne.class, studentEmail);
 
             if (student == null) {
@@ -35,7 +37,6 @@ public class ManageInscriptionServlet extends HttpServlet {
                 return;
             }
 
-            // Retrieve the course (Cours) entity using the course name
             Cours course = (Cours) session.createQuery("FROM Cours WHERE nomCours = :courseName",Cours.class)
                     .setParameter("courseName", courseName)
                     .uniqueResult();
@@ -45,10 +46,8 @@ public class ManageInscriptionServlet extends HttpServlet {
                 return;
             }
 
-            // Retrieve the inscriptions for the student
             Collection<Inscription> inscriptions = student.getInscriptionsByIdPersonne();
 
-            // Find the corresponding inscription for the course
             Inscription inscriptionToUpdate = null;
             for (Inscription inscription : inscriptions) {
                 if (inscription.getCours().equals(course)) {
@@ -62,22 +61,19 @@ public class ManageInscriptionServlet extends HttpServlet {
                 return;
             }
 
-            // Set the new state (Etat) based on the action
+
             if ("accept".equals(action)) {
-                inscriptionToUpdate.setEtat(1);  // Accept
+                inscriptionToUpdate.setEtat(1);  // Accepter
             } else if ("deny".equals(action)) {
-                inscriptionToUpdate.setEtat(2);  // Deny
+                inscriptionToUpdate.setEtat(2);  // Refuser
             }
 
-            // Set the comment if provided
             inscriptionToUpdate.setDescriptionRefus(commentaire);
 
-            // Merge the updated inscription to ensure the changes are tracked by Hibernate
             session.merge(inscriptionToUpdate);  // Merge the detached entity
 
-            tx.commit();  // Commit the transaction
+            tx.commit();
 
-            // Redirect to inscription_prof.jsp after successful update
             response.sendRedirect(request.getContextPath()+"/InscriptionProf");  // Adjust the path based on your project structure
 
         } catch (Exception e) {
