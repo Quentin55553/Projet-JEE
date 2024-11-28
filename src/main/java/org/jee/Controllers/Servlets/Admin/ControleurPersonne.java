@@ -9,6 +9,9 @@ import org.jee.entity.Personne;
 
 import java.util.List;
 
+/**
+ * La servlet est utilisée pour obtenir des informations sur les objets de la classe Personne
+ */
 public class ControleurPersonne extends HttpServlet {
 
     /**
