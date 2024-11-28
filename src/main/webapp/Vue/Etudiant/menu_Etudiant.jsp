@@ -37,13 +37,13 @@
         <ul>
             <li><a href="<%= request.getContextPath() %>/MenuEtudiantServlet">Accueil</a></li>
             <li><a href="<%= request.getContextPath() %>/DemandeInscriptionServlet">Inscrire à un cours</a></li>
+            <li><a href="<%= request.getContextPath() %>/DebutReleveResultatServlet">Inscrire à un cours</a></li>
         </ul>
     </nav>
     <form action="<%= request.getContextPath() %>/logout" method="Get" style="display: inline;">
         <button type="submit">Déconnexion</button>
     </form>
 </div>
-
 <!-- Section Inscription -->
 <div>
     <h3>Inscriptions en attente ou refusées</h3>
