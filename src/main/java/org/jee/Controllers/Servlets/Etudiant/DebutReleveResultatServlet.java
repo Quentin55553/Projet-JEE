@@ -8,8 +8,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
+import org.jee.entity.Cours;
 import org.jee.entity.Personne;
 import org.jee.entity.Resultat;
 import org.jee.Util.HibernateUtil;
@@ -17,9 +19,9 @@ import org.jee.Util.HibernateUtil;
 import java.io.IOException;
 import java.util.List;
 
+
 @WebServlet("/DebutReleveResultatServlet")
 public class DebutReleveResultatServlet extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession httpSession = request.getSession();
@@ -43,9 +45,8 @@ public class DebutReleveResultatServlet extends HttpServlet {
             resultats = query.list();
         }
 
-        // Set the results as a request attribute and forward to the JSP
-        request.setAttribute("resultats", resultats);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Vue/Etudiant/notes_Etudiant.jsp");
-        dispatcher.forward(request, response);
+        HttpSession session = request.getSession();
+        session.setAttribute("resultats", resultats);
+        response.sendRedirect(request.getContextPath() + "/Vue/Etudiant/notes_Etudiant.jsp");
     }
 }
