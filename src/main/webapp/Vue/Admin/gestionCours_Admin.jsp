@@ -1,4 +1,4 @@
-<%@ page import="java.util.List" %>
+﻿<%@ page import="java.util.List" %>
 <%@ page import="org.hibernate.Session" %>
 <%@ page import="org.hibernate.SessionFactory" %>
 <%@ page import="org.hibernate.cfg.Configuration" %>

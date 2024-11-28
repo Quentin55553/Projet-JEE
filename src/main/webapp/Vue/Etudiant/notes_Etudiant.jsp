@@ -48,7 +48,7 @@
 
         <br>
 
-        <form action="creationReleve" method="GET">
+        <form action="ReleveResultatServlet" method="GET">
             <button>Génerer un relevé de notes</button>
         </form>
 

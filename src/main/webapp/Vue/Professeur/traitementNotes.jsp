@@ -1,4 +1,4 @@
-<%@ page import="org.jee.entity.Personne" %>
+﻿<%@ page import="org.jee.entity.Personne" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.jee.entity.Cours" %>
 <!DOCTYPE html>

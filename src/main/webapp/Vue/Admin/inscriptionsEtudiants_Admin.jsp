@@ -1,4 +1,4 @@
-<%@ page import="org.jee.entity.Personne" %><%
+﻿<%@ page import="org.jee.entity.Personne" %><%
   // Vérifiez si l'utilisateur est connecté et est administrateur
   Personne user = (Personne) session.getAttribute("user");
   if (user == null || user.getRole() != 1) {
