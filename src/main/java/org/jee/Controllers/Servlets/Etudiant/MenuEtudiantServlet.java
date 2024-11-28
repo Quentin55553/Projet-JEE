@@ -19,8 +19,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Serlvet utilisé pour le menu étudiant, affiche les insriptions aux cours en attente ainsi que les moyennes pour les cours.
+ */
 @WebServlet("/MenuEtudiantServlet")
 public class MenuEtudiantServlet extends HttpServlet {
+
+    /**
+     * Génère la liste des cours auquel l'étudiant n'est pas inscrit, l'etat des demandes d'inscriptions
+     * et les moyennes sur les notes de l'étudiant par cours.
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Get the session attribute "user"
@@ -33,7 +41,6 @@ public class MenuEtudiantServlet extends HttpServlet {
         }
 
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            // Query to get all results for the current user
             Query<Resultat> query = session.createQuery(
                     "FROM Resultat WHERE personneByIdEtudiant.idPersonne = :idPersonne",
                     Resultat.class
@@ -42,7 +49,6 @@ public class MenuEtudiantServlet extends HttpServlet {
 
             List<Resultat> resultatList = query.list();
 
-            // Compute averages by course
             Map<Integer, Double> courseAverages = new HashMap<>();
             Map<Integer, Integer> courseCounts = new HashMap<>();
 
@@ -50,22 +56,18 @@ public class MenuEtudiantServlet extends HttpServlet {
                 int courseId = resultat.getCoursByIdCours().getIdCours();
                 double grade = resultat.getNote();
 
-                // Accumulate the sum and count for each course
                 courseAverages.put(courseId, courseAverages.getOrDefault(courseId, 0.0) + grade);
                 courseCounts.put(courseId, courseCounts.getOrDefault(courseId, 0) + 1);
             }
 
-            // Calculate the final averages
             for (Map.Entry<Integer, Double> entry : courseAverages.entrySet()) {
                 int courseId = entry.getKey();
                 double total = entry.getValue();
                 int count = courseCounts.get(courseId);
 
-                // Replace the total with the average
                 courseAverages.put(courseId, total / count);
             }
 
-            // Query to get all inscriptions for the user with etat 0 or 2
             Query<Inscription> inscriptionQuery = session.createQuery(
                     "FROM Inscription WHERE personneByIdEtudiant.idPersonne = :idPersonne AND (etat = 0 OR etat = 2)",
                     Inscription.class
@@ -74,7 +76,6 @@ public class MenuEtudiantServlet extends HttpServlet {
 
             List<Inscription> inscriptions = inscriptionQuery.list();
 
-            // Retrieve the Cours objects for each courseId in the courseAverages map
             Map<Integer, Cours> courses = new HashMap<>();
             for (Integer courseId : courseAverages.keySet()) {
                 Cours cours = session.get(Cours.class, courseId);
@@ -83,12 +84,10 @@ public class MenuEtudiantServlet extends HttpServlet {
                 }
             }
 
-            // Send both course averages, inscriptions, and courses to the JSP
             request.setAttribute("courseAverages", courseAverages);
             request.setAttribute("inscriptions", inscriptions);
             request.setAttribute("courses", courses);
 
-            // Forward to the menu_Etudiant.jsp
             request.getRequestDispatcher("/Vue/Etudiant/menu_Etudiant.jsp").forward(request, response);
 
         } catch (Exception e) {
@@ -97,5 +96,3 @@ public class MenuEtudiantServlet extends HttpServlet {
         }
     }
 }
-
-
