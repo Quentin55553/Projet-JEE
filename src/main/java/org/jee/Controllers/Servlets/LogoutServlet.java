@@ -1,4 +1,4 @@
-package org.jee.Servlets;
+package org.jee.Controllers.Servlets;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,8 +9,14 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+/**
+ * Servlet responsable de la déconnexion des utilisateurs.
+ */
 @WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
+    /**
+     * Déconnecte l'utilisateur et le redirige vers la page de connexion.
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
