@@ -15,10 +15,13 @@ import org.jee.entity.Cours;
 import java.io.IOException;
 import java.sql.Date;
 
+/**
+ * La servlet associée à la création/modification/suprression des cours par l'administrateur.
+ * Voire \webapp\Vue\Admin\creationCours_Admin.jsp
+ */
+
 @WebServlet("/CreeCours")
 public class CreationCoursServlet extends HttpServlet {
-
-    //Personne profTest = ControleurPersonne.getPersonneByID("id_testProf1");
 
     private static final SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
@@ -27,6 +30,11 @@ public class CreationCoursServlet extends HttpServlet {
         factory.close();
     }
 
+    /**
+     * Créer ou modifie un objet Cours selon les paramètres envoyé par request. Notamment "action" qui définit si il faut
+     * créer un cours ou en selectionner un pour le modifier ou le supprimer.
+     * Redirige vers \webapp\Vue\Admin\gestionCours_Admin.jsp lorsque l'opération est terminée avec succés.
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
 
