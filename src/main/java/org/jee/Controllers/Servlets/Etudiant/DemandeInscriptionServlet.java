@@ -16,9 +16,14 @@ import org.jee.entity.Personne;
 import java.io.IOException;
 import java.util.List;
 
-
+/**
+ * Servlet permet aux étudiant de postuler aux cours auquels ils ne sont pas inscrits.
+ */
 @WebServlet("/DemandeInscriptionServlet")
 public class DemandeInscriptionServlet extends HttpServlet {
+    /**
+     * Permet de génerer la liste des cours auquel un étudiant n'est pas inscrit.
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Récupérer l'utilisateur (Personne) connecté depuis la session
