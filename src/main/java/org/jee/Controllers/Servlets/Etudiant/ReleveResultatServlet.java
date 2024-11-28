@@ -18,9 +18,11 @@ import org.jee.entity.Resultat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
 
 /**
  * Servlet déstinée à générer un relevé de notes pour un étudiant au format PDF
@@ -29,11 +31,8 @@ import java.util.Map;
 public class ReleveResultatServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        HttpSession session = request.getSession();
-        Personne etudiant = (Personne) session.getAttribute("user");
-
         // Récupère les données JSON du formulaire
-        String resultatsJson = request.getParameter("resultatsJson");
+        String resultatsJson = URLDecoder.decode(request.getParameter("resultatsJson"), "UTF-8");
         String moyenneGlobale = request.getParameter("moyenneGlobale");
 
         // Désérialise la liste JSON en objets Java
@@ -42,6 +41,8 @@ public class ReleveResultatServlet extends HttpServlet {
 
         // Prépare la Map des cours associés aux notes
         Map<Cours, List<Resultat>> coursNotesMap = prepareCoursNotesMap(resultats);
+
+        Personne etudiant = resultats.get(0).getPersonneByIdEtudiant();
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
@@ -62,7 +63,7 @@ public class ReleveResultatServlet extends HttpServlet {
     }
 
 
-    /** 
+    /**
      * Méthode pour générer le PDF
      * */
     private void generatePdf(Personne etudiant, Map<Cours, List<Resultat>> coursNotesMap, String moyenneGlobale, ByteArrayOutputStream baos) throws DocumentException, IOException {
@@ -134,7 +135,7 @@ public class ReleveResultatServlet extends HttpServlet {
     }
 
 
-    /** 
+    /**
      * Méthode pour convertir la liste de résultats en Map des cours avec les résultats associés
      */
     private Map<Cours, List<Resultat>> prepareCoursNotesMap(List<Resultat> resultats) {
