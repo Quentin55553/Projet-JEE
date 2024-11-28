@@ -22,7 +22,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Servlet déstinée à générer un relevé de notes pour un étudiant au format PDF
+ */
 @WebServlet("/ReleveResultatServlet")
 public class ReleveResultatServlet extends HttpServlet {
     @Override
@@ -60,7 +62,9 @@ public class ReleveResultatServlet extends HttpServlet {
     }
 
 
-    // Méthode pour générer le PDF
+    /** 
+     * Méthode pour générer le PDF
+     * */
     private void generatePdf(Personne etudiant, Map<Cours, List<Resultat>> coursNotesMap, String moyenneGlobale, ByteArrayOutputStream baos) throws DocumentException, IOException {
         Document document = new Document();
         PdfWriter.getInstance(document, baos);
@@ -130,7 +134,9 @@ public class ReleveResultatServlet extends HttpServlet {
     }
 
 
-    // Méthode pour convertir la liste de résultats en Map des cours avec les résultats associés
+    /** 
+     * Méthode pour convertir la liste de résultats en Map des cours avec les résultats associés
+     */
     private Map<Cours, List<Resultat>> prepareCoursNotesMap(List<Resultat> resultats) {
         Map<Cours, List<Resultat>> coursNotesMap = new java.util.HashMap<>();
 
