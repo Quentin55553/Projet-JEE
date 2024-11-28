@@ -1,5 +1,6 @@
 package org.jee.entity;
 
+import com.google.gson.annotations.Expose;
 import jakarta.persistence.*;
 
 
@@ -8,18 +9,22 @@ public class Resultat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_resultat")
+    @Expose
     private int idResultat;
 
     @Basic
     @Column(name = "note")
+    @Expose
     private Double note;
 
     @ManyToOne
     @JoinColumn(name = "id_etudiant", referencedColumnName = "id_personne")
+    @Expose
     private Personne personneByIdEtudiant;
 
     @ManyToOne
     @JoinColumn(name = "id_cours", referencedColumnName = "id_cours")
+    @Expose
     private Cours coursByIdCours;
 
 

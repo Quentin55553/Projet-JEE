@@ -1,5 +1,6 @@
 package org.jee.entity;
 
+import com.google.gson.annotations.Expose;
 import jakarta.persistence.*;
 import java.sql.Date;
 import java.util.List;
@@ -11,12 +12,15 @@ public class Cours {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cours")
+    @Expose
     private int idCours;
 
     @Column(name = "nom_cours")
+    @Expose
     private String nomCours;
 
     @Column(name = "description")
+    @Expose
     private String description;
 
     @Column(name = "date_debut")
@@ -27,6 +31,7 @@ public class Cours {
 
     @ManyToOne
     @JoinColumn(name = "id_enseignant", referencedColumnName = "id_personne")
+    @Expose
     private Personne personneByIdEnseignant;
 
     // Relation OneToMany avec Inscription

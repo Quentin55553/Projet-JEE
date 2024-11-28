@@ -1,5 +1,6 @@
 package org.jee.entity;
 
+import com.google.gson.annotations.Expose;
 import jakarta.persistence.*;
 
 import java.sql.Date;
@@ -10,18 +11,22 @@ import java.util.Collection;
 public class Personne {
     @Id
     @Column(name = "id_personne")
+    @Expose
     private String idPersonne;
 
     @Basic
     @Column(name = "nom")
+    @Expose
     private String nom;
 
     @Basic
     @Column(name = "prenom")
+    @Expose
     private String prenom;
 
     @Basic
     @Column(name = "date_naissance")
+    @Expose
     private Date dateNaissance;
 
     @Basic
