@@ -15,6 +15,10 @@ import org.jee.entity.Personne;
 import java.io.IOException;
 import java.sql.Date;
 
+
+/**
+ * La servlet dédiée à la création d'un objet Personne.
+ */
 @WebServlet("/CreeEP")
 public class CreeEtuProfServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
