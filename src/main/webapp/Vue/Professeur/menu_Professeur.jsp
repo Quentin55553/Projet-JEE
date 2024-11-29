@@ -39,14 +39,14 @@
     <h1 class="no-data">Bienvenue, <%= user.getPrenom() %> <%= user.getNom() %>!</h1>
 
     <!-- Boutons d'action -->
-    <div class="actions">
+    <div class="actions no-data">
         <button onclick="window.location.href='<%= request.getContextPath() %>/InscriptionProf'">Inscription Professeur</button>
-        <button onclick="window.location.href='<%= request.getContextPath() %>/Servlet_Debut_Note_Prof'">Saisie de Notes</button>
+        <button onclick="window.location.href='<%= request.getContextPath() %>/Servlet_Debut_Note_Prof'" class="margin-left">Saisie de Notes</button>
     </div>
 
     <!-- Section dynamique selon le choix -->
     <div id="dynamic-content">
-        <p>Sélectionnez une action dans le menu ou cliquez sur un des boutons ci-dessus pour commencer.</p>
+        <p class="no-data">Sélectionnez une action dans le menu ou cliquez sur un des boutons ci-dessus pour commencer.</p>
     </div>
 </div>
 </body>

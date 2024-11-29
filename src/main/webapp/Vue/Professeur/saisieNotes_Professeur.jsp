@@ -32,7 +32,7 @@
       <th>Nom du Cours</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody >
     <%
       // Cast the coursList attribute to List<Cours>
       List<Cours> coursList = (List<Cours>) request.getAttribute("coursList");
@@ -55,8 +55,9 @@
     %>
     </tbody>
   </table>
-  <br>
-  <button type="submit">Choisir ce cours</button>
+  <div style="text-align: center;  margin-right:80px;"">
+    <button type="submit">Choisir ce cours</button>
+  </div>
 </form>
 </body>
 </html>

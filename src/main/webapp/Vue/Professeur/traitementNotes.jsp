@@ -86,18 +86,20 @@
 
     <!-- Hidden field to pass the course ID -->
     <input type="hidden" name="idCours" value="<%= cours.getIdCours() %>">
-
-    <button type="submit">Soumettre les notes</button>
+    <br>
+    <div style="text-align: center; margin-left: 10px; margin-top: 10px;"> <!-- Décalage vers la gauche et saut de ligne -->
+        <button type="submit">Soumettre les notes</button>
+    </div>
 </form>
 <%
 } else {
 %>
-<p>Aucun étudiant à évaluer.</p>
+<p class="no-data">Aucun étudiant à évaluer.</p>
 <%
     }
 } else {
 %>
-<p>Le cours n'a pas été trouvé.</p>
+<p class="no-data">Le cours n'a pas été trouvé.</p>
 <%
     }
 %>
