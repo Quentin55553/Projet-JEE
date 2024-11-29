@@ -12,8 +12,12 @@ import org.jee.entity.Inscription;
 import org.jee.Util.HibernateUtil;
 import org.jee.entity.Personne;
 
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Properties;
 
 /**
  * La servlet gére l'acceptation ou le refus d'un postulant au cours indiqué.
@@ -64,21 +68,67 @@ public class ManageInscriptionServlet extends HttpServlet {
 
             if ("accept".equals(action)) {
                 inscriptionToUpdate.setEtat(1);  // Accepter
+                sendEmail(student.getContact(), "Votre demande d'inscription a été acceptée",
+                        "Bonjour,\n\nVotre demande d'inscription au cours a été acceptée.\n\nCordialement,\nCY Tech.");
             } else if ("deny".equals(action)) {
                 inscriptionToUpdate.setEtat(2);  // Refuser
+                sendEmail(student.getContact(), "Votre demande d'inscription a été refusée",
+                        "Bonjour,\n\nVotre demande d'inscription au cours a été refusée.\n\nCordialement,\nCY Tech.");
             }
+
 
             inscriptionToUpdate.setDescriptionRefus(commentaire);
 
-            session.merge(inscriptionToUpdate);  // Merge the detached entity
+            session.merge(inscriptionToUpdate);
 
             tx.commit();
 
-            response.sendRedirect(request.getContextPath()+"/InscriptionProf");  // Adjust the path based on your project structure
+            response.sendRedirect(STR."\{request.getContextPath()}/InscriptionProf");
 
         } catch (Exception e) {
             e.printStackTrace();
             response.getWriter().println("Erreur lors de la mise à jour de l'inscription.");
+        }
+    }
+    public void sendEmail(String to, String subject, String body) {
+        String from = "cytechjeemail@gmail.com";
+        String host = "smtp.gmail.com";
+
+        // Set up system properties
+        Properties properties = System.getProperties();
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+
+        // Set up the email session
+        javax.mail.Session session = javax.mail.Session.getInstance(properties, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("cytechjeemail@gmail.com", "wjvsfjprrudjbqen");
+            }
+        });
+
+        try {
+            // Create a default MimeMessage object
+            MimeMessage message = new MimeMessage(session);
+
+            // Set From: header field
+            message.setFrom(new InternetAddress(from));
+
+            // Set To: header field
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+
+            // Set Subject: header field
+            message.setSubject(subject);
+
+            // Set the actual message
+            message.setText(body);
+
+            // Send the message
+            Transport.send(message);
+            System.out.println("Email sent successfully to " + to);
+        } catch (MessagingException mex) {
+            mex.printStackTrace();
         }
     }
 }
