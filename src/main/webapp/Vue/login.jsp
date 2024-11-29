@@ -23,7 +23,9 @@
         <label for="password">Mot de passe</label>
         <input type="password" id="password" name="password" required>
 
-        <button type="submit">Se connecter</button>
+        <div style="text-align: center; margin-left: 40px;">
+            <button type="submit">Se connecter</button>
+        </div>
     </form>
 
     <% if (request.getParameter("error") != null) { %>
