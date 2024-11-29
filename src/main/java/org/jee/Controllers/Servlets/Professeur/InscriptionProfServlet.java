@@ -61,6 +61,7 @@ public class InscriptionProfServlet extends HttpServlet {
                         details.put("studentName", student.getNom() + " " + student.getPrenom());
                         details.put("studentEmail", student.getIdPersonne());
                         details.put("courseName", course.getNomCours());
+                        details.put("privateEmail", student.getContact());
                         inscriptionDetails.add(details);
                     }
                 }

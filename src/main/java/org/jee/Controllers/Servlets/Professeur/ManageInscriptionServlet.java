@@ -1,5 +1,8 @@
 package org.jee.Controllers.Servlets.Professeur;
 
+import com.sendgrid.helpers.mail.Mail;
+import com.sendgrid.helpers.mail.objects.Content;
+import com.sendgrid.helpers.mail.objects.Email;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,7 +21,7 @@ import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Properties;
-
+import com.sendgrid.*;
 /**
  * La servlet gére l'acceptation ou le refus d'un postulant au cours indiqué.
  */
@@ -69,11 +72,11 @@ public class ManageInscriptionServlet extends HttpServlet {
             if ("accept".equals(action)) {
                 inscriptionToUpdate.setEtat(1);  // Accepter
                 sendEmail(student.getContact(), "Votre demande d'inscription a été acceptée",
-                        "Bonjour,\n\nVotre demande d'inscription au cours a été acceptée.\n\nCordialement,\nCY Tech.");
+                        "Bonjour,\n\nVotre demande d'inscription au cours "+courseName+" a été acceptée.\nCommentaire du prof :"+commentaire+"\nCordialement,\nCY Tech.");
             } else if ("deny".equals(action)) {
                 inscriptionToUpdate.setEtat(2);  // Refuser
                 sendEmail(student.getContact(), "Votre demande d'inscription a été refusée",
-                        "Bonjour,\n\nVotre demande d'inscription au cours a été refusée.\n\nCordialement,\nCY Tech.");
+                        "Bonjour,\n\nVotre demande d'inscription au cours "+courseName+" a été refusée.\nCommentaire du prof :"+commentaire+"\nCordialement,\nCY Tech.");
             }
 
 
@@ -90,45 +93,26 @@ public class ManageInscriptionServlet extends HttpServlet {
             response.getWriter().println("Erreur lors de la mise à jour de l'inscription.");
         }
     }
+
+
     public void sendEmail(String to, String subject, String body) {
-        String from = "cytechjeemail@gmail.com";
-        String host = "smtp.gmail.com";
+        Email from = new Email("cytechjeemail@gmail.com");
+        Email recipient = new Email(to);
+        Content content = new Content("text/plain", body);
+        Mail mail = new Mail(from, subject, recipient, content);
 
-        // Set up system properties
-        Properties properties = System.getProperties();
-        properties.put("mail.smtp.host", host);
-        properties.put("mail.smtp.port", "587");
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.starttls.enable", "true");
-
-        // Set up the email session
-        javax.mail.Session session = javax.mail.Session.getInstance(properties, new Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("cytechjeemail@gmail.com", "wjvsfjprrudjbqen");
-            }
-        });
+        SendGrid sg = new SendGrid("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");
+        Request request = new Request();
 
         try {
-            // Create a default MimeMessage object
-            MimeMessage message = new MimeMessage(session);
-
-            // Set From: header field
-            message.setFrom(new InternetAddress(from));
-
-            // Set To: header field
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-
-            // Set Subject: header field
-            message.setSubject(subject);
-
-            // Set the actual message
-            message.setText(body);
-
-            // Send the message
-            Transport.send(message);
-            System.out.println("Email sent successfully to " + to);
-        } catch (MessagingException mex) {
-            mex.printStackTrace();
+            request.setMethod(Method.POST);
+            request.setEndpoint("mail/send");
+            request.setBody(mail.build());
+            Response response = sg.api(request);
+            System.out.println("Status Code: " + response.getStatusCode());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+
 }

@@ -50,6 +50,7 @@
     <tr>
         <th>Nom de l'étudiant</th>
         <th>Email de l'étudiant</th>
+        <th>Email privé de l'étudiant</th>
         <th>Nom du cours</th>
         <th>Commentaire</th>
         <th>Action</th>
@@ -61,11 +62,13 @@
         for (Map<String, String> details : inscriptionDetails) {
             String studentName = details.get("studentName");
             String studentEmail = details.get("studentEmail");
+            String privateEmail = details.get("privateEmail");
             String courseName = details.get("courseName");
     %>
     <tr>
         <td><%= studentName %></td>
         <td><%= studentEmail %></td>
+        <td><%= privateEmail %></td>
         <td><%= courseName %></td>
         <td>
             <form method="post" action="<%= request.getContextPath() %>/ManageInscriptionServlet">
