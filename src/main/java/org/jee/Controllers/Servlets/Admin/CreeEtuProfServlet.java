@@ -69,15 +69,13 @@ public class CreeEtuProfServlet extends HttpServlet {
                 tx.rollback();
             }
             // Message en cas de contrainte violée (id_personne unique)
-            response.setContentType("text/html");
-            response.getWriter().println("<h1>Erreur : L'identifiant " + id_personne + " existe déjà.</h1>");
+            response.sendRedirect("Vue/Admin/adminErreur.jsp");
         } catch (Exception e) {
             if (tx != null) {
                 tx.rollback();
             }
             e.printStackTrace();
-            response.setContentType("text/html");
-            response.getWriter().println("<h1>Erreur lors de l'inscription</h1>");
+            response.sendRedirect("Vue/Admin/adminErreur.jsp");
         } finally {
             session.close();
             factory.close();
