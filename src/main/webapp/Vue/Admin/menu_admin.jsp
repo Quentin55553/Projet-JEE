@@ -43,9 +43,12 @@
     <!-- Boutons d'action -->
     <div class="no-data actions">
         <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/inscriptionsEtudiants_Admin.jsp'">Créer profil étudiant</button>
-        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/inscriptionsProfesseurs_Admin.jsp'">Créer profil professeur</button>
-        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/gestionCours_Admin.jsp'">Accéder à la gestion de cours</button>
-        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/AffichagePersonne_Admin.jsp'">Affichage de professeur et étudiant</button>
+
+        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/inscriptionsProfesseurs_Admin.jsp'" class="margin-left">Créer profil professeur</button>
+
+        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/gestionCours_Admin.jsp'" class="margin-left">Accéder à la gestion de cours</button>
+
+        <button onclick="window.location.href='<%= request.getContextPath() %>/Vue/Admin/AffichagePersonne_Admin.jsp'" class="margin-left">Affichage de professeur et étudiant</button>
     </div>
 
     <!-- Section dynamique selon le choix -->

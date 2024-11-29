@@ -47,9 +47,11 @@
 
         <div>
             <h1 class="no-data">Tableau des Cours</h1>
-            <form action="<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp" method="post">
+            <form action="<%= request.getContextPath() %>/Vue/Admin/creationCours_Admin.jsp" method="post" class="no-data">
                 <input type="hidden" name="action" value="creation">
+
                 <button type="submit">Créer cours</button>
+
             </form>
             <table>
                 <thead>

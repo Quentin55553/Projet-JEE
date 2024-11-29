@@ -63,10 +63,11 @@
   </form>
 
   <!-- Back to Admin Menu Link -->
-  <div class="back-link">
+  <div style="display: flex; justify-content: center; margin-top: 10px;">
     <a href="<%= request.getContextPath() %>/Vue/Admin/menu_admin.jsp">Retour au menu administrateur</a>
   </div>
 </div>
+
 
 </body>
 </html>

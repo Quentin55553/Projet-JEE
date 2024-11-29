@@ -37,17 +37,21 @@
     </form>
 </div>
 
-<h1>Afficher la liste des Étudiants ou Professeurs</h1>
+<h1 class="no-data">Afficher la liste des Étudiants ou Professeurs</h1>
 
-<form action="<%= request.getContextPath() %>/AffichagePersonne" method="post">
+<form class="no-data" action="<%= request.getContextPath() %>/AffichagePersonne" method="post">
+    <div style="margin-bottom: 20px;">
     <label>
         <input type="radio" name="typePersonne" value="etudiant" required> Étudiants
     </label>
     <label>
         <input type="radio" name="typePersonne" value="professeur" required> Professeurs
     </label>
-    <button type="submit">Voir la liste</button>
+    </div>
+     <button class="margin-left" type="submit">Voir la liste</button>
+
 </form>
+
 
 <hr>
 
@@ -112,7 +116,7 @@
     <% }
     }else{ %>
 
-    <p>Choisissez les personnes à afficher.</p>
+    <p class="no-data">Choisissez les personnes à afficher.</p>
 
     <%}%>
     </tbody>
