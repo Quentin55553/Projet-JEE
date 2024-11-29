@@ -1,5 +1,12 @@
 package org.jee.Controllers.Servlets.Professeur;
 
+import com.sendgrid.Method;
+import com.sendgrid.Request;
+import com.sendgrid.Response;
+import com.sendgrid.SendGrid;
+import com.sendgrid.helpers.mail.Mail;
+import com.sendgrid.helpers.mail.objects.Content;
+import com.sendgrid.helpers.mail.objects.Email;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,26 +29,21 @@ public class updateNoteServlet extends HttpServlet {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
 
-            // Get course ID from the form
             int idCours = Integer.parseInt(request.getParameter("idCours"));
 
-            // Iterate through the submitted notes
             Enumeration<String> parameterNames = request.getParameterNames();
             while (parameterNames.hasMoreElements()) {
                 String paramName = parameterNames.nextElement();
                 if (paramName.startsWith("note_")) {
-                    // Extract student email and note value
-                    String studentEmail = paramName.substring(5); // Extract email
-                    String noteStr = request.getParameter(paramName); // Get note value
+                    String studentEmail = paramName.substring(5);
+                    String noteStr = request.getParameter(paramName);
 
-                    double note = Double.parseDouble(noteStr); // Parse to double
+                    double note = Double.parseDouble(noteStr);
 
                     System.out.println("Student Email: " + studentEmail + ", Note: " + note);
 
-                    // Create a new Resultat object
                     Resultat resultat = new Resultat();
 
-                    // Retrieve the student (Personne) and course (Cours) entities
                     Personne etudiant = session.get(Personne.class, studentEmail);
                     Cours cours = session.get(Cours.class, idCours);
 
@@ -50,18 +52,38 @@ public class updateNoteServlet extends HttpServlet {
                         resultat.setCoursByIdCours(cours);
                         resultat.setNote(note);
 
-                        // Save the Resultat entity
                         session.persist(resultat);
                     }
+                    sendEmail(etudiant.getContact(),"Nouvelle note","Bonjour,\n\nVous avais une nouvelle note dans le cours : "+cours.getNomCours()+".\nNote :"+note+"\nCordialement,\nCY Tech.");
                 }
             }
-
-            // Commit the transaction
             transaction.commit();
+
+
             response.sendRedirect("Vue/Professeur/confirmation.jsp");
         } catch (Exception e) {
             e.printStackTrace();
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erreur lors de la mise à jour des notes.");
         }
     }
+    public void sendEmail(String to, String subject, String body) {
+        Email from = new Email("cytechjeemail@gmail.com");
+        Email recipient = new Email(to);
+        Content content = new Content("text/plain", body);
+        Mail mail = new Mail(from, subject, recipient, content);
+
+        SendGrid sg = new SendGrid("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");
+        Request request = new Request();
+
+        try {
+            request.setMethod(Method.POST);
+            request.setEndpoint("mail/send");
+            request.setBody(mail.build());
+            Response response = sg.api(request);
+            System.out.println("Status Code: " + response.getStatusCode());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
+

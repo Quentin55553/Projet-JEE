@@ -39,7 +39,7 @@ public class Cours {
     private List<Inscription> inscriptions;
 
     @OneToMany(mappedBy = "coursByIdCours", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Resultat> resultats; // This will handle cascading deletions
+    private List<Resultat> resultats;
 
 
     @Override

@@ -67,11 +67,11 @@
         <td><%= etudiant.getContact() %></td>
     </tr>
     <tr>
-        <th>Contact</th>
+        <th>Date de naissance</th>
         <td><%= etudiant.getDateNaissance() %></td>
     </tr>
     <tr>
-        <th>Contact</th>
+        <th>Mot de passe</th>
         <td><%= etudiant.getPassword() %></td>
     </tr>
 </table>

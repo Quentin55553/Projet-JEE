@@ -92,7 +92,7 @@
     <%
         for (Personne p : listePersonne){
             String id_etudiant = p.getIdPersonne();
-            String lienDetails = "/Vue/Admin/AffichageDetailsEtudiant_Admin.jsp?id_etudiant=" + id_etudiant;
+            String lienDetails = request.getContextPath()+"/Vue/Admin/AffichageDetailsEtudiant_Admin.jsp?id_etudiant=" + id_etudiant;
     %>
     <tr>
         <td><a href=<%=lienDetails%>><%= id_etudiant%></a></td>
