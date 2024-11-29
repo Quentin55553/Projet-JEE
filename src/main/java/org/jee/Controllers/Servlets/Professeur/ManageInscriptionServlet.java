@@ -83,7 +83,7 @@ public class ManageInscriptionServlet extends HttpServlet {
 
             tx.commit();
 
-            response.sendRedirect(STR."\{request.getContextPath()}/InscriptionProf");
+            response.sendRedirect(request.getContextPath()}"/InscriptionProf");
 
         } catch (Exception e) {
             e.printStackTrace();
