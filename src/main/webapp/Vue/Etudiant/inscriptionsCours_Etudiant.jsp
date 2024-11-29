@@ -41,7 +41,7 @@
 
     if (coursNonInscrits == null || coursNonInscrits.isEmpty()) {
 %>
-<p>Aucun cours disponible pour inscription.</p>
+<p class="no-data">Aucun cours disponible pour inscription.</p>
 <%
 } else {
 %>
