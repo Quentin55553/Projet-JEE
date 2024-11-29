@@ -98,6 +98,7 @@
         <input type="text" name="id_professeur" value="<%= cours.getPersonneByIdEnseignant().getIdPersonne()%>">
 
         <button type="submit">Modifier cours</button>
+        <%if (request.getParameter("error") != null) {%><p class="error-message">Erreur : Le professeur spécifié est introuvable.</p><%}%>
     </form>
     <% } else if ("suppression".equals(actionAdmin)) {%>
     <h2>Suppression de Cours</h2>

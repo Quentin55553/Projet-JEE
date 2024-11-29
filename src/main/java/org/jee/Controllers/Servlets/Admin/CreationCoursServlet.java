@@ -84,7 +84,7 @@ public class CreationCoursServlet extends HttpServlet {
 
                 if (professeur == null) {
                     response.setContentType("text/html");
-                    response.getWriter().println("<h1>Erreur : Le professeur spécifié est introuvable.</h1>");
+                    response.sendRedirect("Vue/Admin/erreurCours.jsp");
                     return;
                 }
                 if ("creation".equals(action)) {
