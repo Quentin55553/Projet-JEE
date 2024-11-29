@@ -21,7 +21,7 @@
 <body>
 <div class="header header-etudiant">
     <img src="<%= request.getContextPath() %>/Images/cytech.png" class="logo">
-    <h3>Étudiant</h3>
+    <h2>Étudiant</h2>
     <nav>
         <ul>
             <li><a href="<%= request.getContextPath() %>/MenuEtudiantServlet">Accueil</a></li>

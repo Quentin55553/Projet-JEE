@@ -103,6 +103,13 @@ public class ReleveResultatServlet extends HttpServlet {
             Cours cours = entry.getKey();
             List<Resultat> resultats = entry.getValue();
 
+            // Check if cours is null
+            if (cours == null) {
+                System.out.println("Cours is null for Resultat with ID: " + entry.getValue().get(0).getIdResultat());
+            } else {
+                System.out.println("Cours: " + cours.getNomCours());
+            }
+
             // Affichage unique du nom du cours et du professeur
             document.add(new Paragraph("Cours : " + cours.getNomCours(), contentFont));
             document.add(new Paragraph("Professeur : " + cours.getPersonneByIdEnseignant().getPrenom() + " " + cours.getPersonneByIdEnseignant().getNom(), contentFont));
@@ -143,6 +150,7 @@ public class ReleveResultatServlet extends HttpServlet {
 
         for (Resultat resultat : resultats) {
             Cours cours = resultat.getCoursByIdCours();
+            System.out.println(cours);
             coursNotesMap.computeIfAbsent(cours, k -> new java.util.ArrayList<>()).add(resultat);
         }
 

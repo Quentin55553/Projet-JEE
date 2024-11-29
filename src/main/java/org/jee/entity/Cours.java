@@ -38,6 +38,9 @@ public class Cours {
     @OneToMany(mappedBy = "cours", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Inscription> inscriptions;
 
+    @OneToMany(mappedBy = "coursByIdCours", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Resultat> resultats; // This will handle cascading deletions
+
 
     @Override
     public boolean equals(Object o) {
@@ -118,5 +121,22 @@ public class Cours {
 
     public void setInscriptions(List<Inscription> inscriptions) {
         this.inscriptions = inscriptions;
+    }
+
+    public List<Resultat> getResultats() {
+        return resultats;
+    }
+
+    public void setResultats(List<Resultat> resultats) {
+        this.resultats = resultats;
+    }
+    public void addResultat(Resultat resultat) {
+        this.resultats.add(resultat);
+        resultat.setCoursByIdCours(this);
+    }
+
+    public void removeResultat(Resultat resultat) {
+        this.resultats.remove(resultat);
+        resultat.setCoursByIdCours(null);
     }
 }

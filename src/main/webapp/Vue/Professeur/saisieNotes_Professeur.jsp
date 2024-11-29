@@ -51,13 +51,13 @@
     </tr>
     <%
         }
-      }
     %>
     </tbody>
   </table>
-  <div style="text-align: center;  margin-right:80px;"">
+  <div style="text-align: center;  margin-right:80px;">
     <button type="submit">Choisir ce cours</button>
   </div>
+  <%}%>
 </form>
 </body>
 </html>
