@@ -27,7 +27,6 @@ public class DebutReleveResultatServlet extends HttpServlet {
         HttpSession httpSession = request.getSession();
         Personne etudiant = (Personne) httpSession.getAttribute("user");
 
-        // Check if the user is logged in
         if (etudiant == null) {
             response.sendRedirect(request.getContextPath() + "/login.jsp");
             return;
@@ -35,7 +34,6 @@ public class DebutReleveResultatServlet extends HttpServlet {
 
         List<Resultat> resultats;
 
-        // Use HibernateUtil to get the SessionFactory and open a session
         try (Session hibernateSession = HibernateUtil.getSessionFactory().openSession()) {
             Query<Resultat> query = hibernateSession.createQuery(
                     "FROM Resultat r WHERE r.personneByIdEtudiant.idPersonne = :idEtudiant",

@@ -72,11 +72,11 @@ public class ManageInscriptionServlet extends HttpServlet {
             if ("accept".equals(action)) {
                 inscriptionToUpdate.setEtat(1);  // Accepter
                 sendEmail(student.getContact(), "Votre demande d'inscription a été acceptée",
-                        "Bonjour,\n\nVotre demande d'inscription au cours "+courseName+" a été acceptée.\nCommentaire du prof :"+commentaire+"\nCordialement,\nCY Tech.");
+                        "Bonjour,\n\nVotre demande d'inscription au cours "+courseName+" a été acceptée.\nCommentaire du prof : "+commentaire+"\nCordialement,\nCY Tech.");
             } else if ("deny".equals(action)) {
                 inscriptionToUpdate.setEtat(2);  // Refuser
                 sendEmail(student.getContact(), "Votre demande d'inscription a été refusée",
-                        "Bonjour,\n\nVotre demande d'inscription au cours "+courseName+" a été refusée.\nCommentaire du prof :"+commentaire+"\nCordialement,\nCY Tech.");
+                        "Bonjour,\n\nVotre demande d'inscription au cours "+courseName+" a été refusée.\nCommentaire du prof : "+commentaire+"\nCordialement,\nCY Tech.");
             }
 
 

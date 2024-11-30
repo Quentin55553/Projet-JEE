@@ -54,7 +54,7 @@ public class updateNoteServlet extends HttpServlet {
 
                         session.persist(resultat);
                     }
-                    sendEmail(etudiant.getContact(),"Nouvelle note","Bonjour,\n\nVous avais une nouvelle note dans le cours : "+cours.getNomCours()+".\nNote :"+note+"\nCordialement,\nCY Tech.");
+                    sendEmail(etudiant.getContact(),"Nouvelle note","Bonjour,\n\nVous avez une nouvelle note dans le cours : "+cours.getNomCours()+".\nNote : "+note+"\nCordialement,\nCY Tech.");
                 }
             }
             transaction.commit();
