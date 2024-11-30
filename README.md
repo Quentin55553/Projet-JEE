@@ -6,4 +6,4 @@
 
 ## 📋 Projet
 > [!NOTE]
-> Vous trouverez le README du projet sur la branche dédiée ou bien cliquez [ici](https://github.com/Quentin55553/Projet-JEE/tree/README).
+> Vous trouverez le README du projet sur la branche dédiée, ou bien cliquez [ici](https://github.com/Quentin55553/Projet-JEE/tree/README).
