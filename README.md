@@ -1,4 +1,4 @@
-# 👋 Bienvenue sur notre dépôt JEE !
+# 👋 Bienvenue sur notre dépôt JEE version Spring Boot !
 
 <div>
   <img src="img/switchBranchFromSb.gif" style="width: 100%;">
