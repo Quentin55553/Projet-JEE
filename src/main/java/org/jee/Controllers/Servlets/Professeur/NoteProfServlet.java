@@ -47,10 +47,7 @@ public class NoteProfServlet extends HttpServlet {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND, "Cours introuvable.");
                 return;
             }
-            
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // A quoi sert cette partie ?
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             Query<Inscription> inscriptionQuery = session.createQuery(
                     "FROM Inscription WHERE cours.idCours = :idCours AND etat = 1", Inscription.class);
             inscriptionQuery.setParameter("idCours", idCours);
@@ -60,7 +57,6 @@ public class NoteProfServlet extends HttpServlet {
                 request.getRequestDispatcher("Vue/Professeur/traitementNotes.jsp").forward(request, response);
                 return;
             }
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
             List<Personne> students = session.createQuery(
                             "SELECT i.personneByIdEtudiant FROM Inscription i WHERE i.cours.idCours = :idCours AND i.etat = 1", Personne.class)
