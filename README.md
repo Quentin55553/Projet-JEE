@@ -6,7 +6,7 @@
 
 ## 📋 Projet
 > [!NOTE]
-> Vous trouverez le README du projet sur la branche dédiée, ou bien cliquez [Y ACCÉDER](https://github.com/Quentin55553/Projet-JEE/tree/README).
+> Vous trouverez le README du projet sur la branche dédiée ▶️ [Y ACCÉDER](https://github.com/Quentin55553/Projet-JEE/tree/README).
 
 > [!NOTE]
 > La version Spring Boot du projet est également sur une branche dédiée ▶️ [Y ACCÉDER](https://github.com/Quentin55553/Projet-JEE/tree/Spring-Boot).
