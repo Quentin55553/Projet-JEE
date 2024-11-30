@@ -73,7 +73,6 @@ public class NoteProfServlet extends HttpServlet {
             }
 
             request.setAttribute("students", students);
-
             request.getRequestDispatcher("Vue/Professeur/traitementNotes.jsp").forward(request, response);
 
             session.getTransaction().commit();
