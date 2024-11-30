@@ -14,6 +14,7 @@ L'application permet par exemple aux administrateurs d'ajouter ou de modifier le
 Toutes ces informations sont stockées dans une base de données SQL, gérée grâce à Hibernate pour la persistance, et manipulées via une architecture MVC intégrant des JSP pour l'affichage et des servlets pour la logique métier.
 
 En plus des fonctionnalités de gestion classique, elle contient également un système de notifications par email pour tenir les étudiants informés des mises à jour liées à leurs inscriptions ou aux notes publiées.
+
 Cette application est déployée sur un serveur Apache Tomcat et sa deuxième version s'appuie sur le framework Spring Boot pour offrir une structure modulaire et évolutive.
 
 ### 👀 Aperçu
