@@ -1,7 +1,7 @@
 # Projet JEE
 
 <div>
-  <img src="img/CYTechLogo.png" style="width: 45%;">
+  <img src="img/CYTechLogo.png" style="width: 25%;">
 </div>
 
 ## 📋 Projet
