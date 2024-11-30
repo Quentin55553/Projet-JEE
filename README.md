@@ -23,6 +23,3 @@ Cette application est déployée sur un serveur Apache Tomcat et sa deuxième ve
   Gif de présentation du projet
   <img src="img/.gif" />
 </div>
-
-## 🚀 Lancer le site internet
-> [Accéder au tutoriel](docs/run_website.md)
