@@ -6,13 +6,14 @@
 
 ## 📋 Projet
 
-Cette application de gestion de scolarité est une plateforme web développée en Java permettant aux administrateurs, enseignants et étudiants de gérer efficacement les informations académiques.
+Cette application de gestion de scolarité est une plateforme web développée en Java permettant aux administrateurs, enseignants et étudiants de gérer les informations académiques.
 
-Elle offre les fonctionnalités essentielles nécessaires à la gestion des étudiants, des cours, des inscriptions et des résultats, tout en garantissant une interface intuitive et sécurisée grâce à l'authentification et à la gestion des rôles des utilisateurs. L'application permet par exemple aux administrateurs d'ajouter ou de modifier les informations des étudiants et des enseignants, d'attribuer des cours aux enseignants ou d'inscrire des étudiants. Les enseignants peuvent saisir les notes des étudiants, consulter leurs résultats et générer des relevés de notes, tandis que les étudiants ont la possibilité de consulter leurs inscriptions, résultats et moyennes. Toutes ces informations sont stockées dans une base de données relationnelle, gérée grâce à Hibernate pour la persistance, et manipulées via une architecture MVC intégrant des JSP pour l'affichage et des servlets pour la logique métier.
+Pour cela, elle dispose de toutes les fonctionnalités élémentaires nécessaires à la gestion des étudiants, des cours, des inscriptions et des résultats, tout en ayant une interface intuitive accessible grâce à l'authentification et à la gestion des rôles des utilisateurs.
 
-Déployée sur un serveur Apache Tomcat, l'application s'appuie sur Spring Boot pour offrir une structure modulaire et scalable. En plus des fonctionnalités de gestion classique, elle propose un système de notifications par email pour tenir les étudiants informés des mises à jour liées à leurs inscriptions ou aux notes publiées.
+L'application permet par exemple aux administrateurs d'ajouter ou de modifier les informations des étudiants et des enseignants, d'attribuer des cours aux enseignants ou encore d'inscrire des étudiants. Les enseignants peuvent saisir les notes des étudiants et gérer leurs inscriptions, tandis que les étudiants ont la possibilité de s'inscrire à des cours, de consulter leurs résultats et moyennes, ainsi que de générer des relevés de notes. Toutes ces informations sont stockées dans une base de données SQL, gérée grâce à Hibernate pour la persistance, et manipulées via une architecture MVC intégrant des JSP pour l'affichage et des servlets pour la logique métier.
 
-Ce projet met en œuvre des technologies modernes comme MySQL ou PostgreSQL pour la base de données, et respecte toutes les bonnes pratiques liées à la gestion et à la cohérence des données.
+En plus des fonctionnalités de gestion classique, elle contient également un système de notifications par email pour tenir les étudiants informés des mises à jour liées à leurs inscriptions ou aux notes publiées.
+Cette application est déployée sur un serveur Apache Tomcat et sa deuxième version s'appuie sur le framework Spring Boot pour offrir une structure modulaire et évolutive.
 
 ### 👀 Aperçu
 
