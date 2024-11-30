@@ -1,9 +1,20 @@
-# 👋 Bienvenue sur notre dépôt JEE !
+# Projet JEE
 
 <div>
-  <img src="img/switchBranchFromInitial.gif" style="width: 40%;">
+  Logo projet
+  <img src="img/" style="width: 65%;">
 </div>
 
 ## 📋 Projet
 
-Vous trouverez le README du projet sur la branche dédiée ou bien cliquez [ici](https://github.com/Quentin55553/Projet-JEE/tree/README)
+Description projet
+
+### 👀 Aperçu
+
+<div align="center">
+  Gif de présentation du projet
+  <img src="img/.gif" />
+</div>
+
+## 🚀 Lancer le site internet
+> [Accéder au tutoriel](docs/run_website.md)
