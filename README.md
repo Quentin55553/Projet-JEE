@@ -31,10 +31,10 @@ Pour la partie 2 - Hibernate il faut installer la branche "Initial" et la télé
 - Changez dans src/main/ressource/hibernate.cfg.xml l'identifiant et le mot de passe pour accéder à la base de données
 - Si vous voulez une base de données remplie, exéctuez le code dump.sql présent dans la branche README
 
-Vous êtes désormais prêt à lancer l'application Tomcat - sur la page de login connectez-vous en tant qu'administrateur pour créer des étudiants et professeurs. L'administrateur de base est 'admin.admin@cy-tech.fr' avec pour mot de passe 'admin'
+Vous êtes désormais prêt à lancer l'application Tomcat - sur la page de login connectez-vous en tant qu'administrateur pour créer des étudiants et professeurs. L'administrateur de base est 'admin.admin@cy-tech.fr' avec pour mot de passe 'admin'.
 
-Pour la partie 3 - Spring Boot if faut installer la branche "Spring-Boot" et la télécharger. Ouvrir le fichier téléchargé en tant que projet IntelliJ et faire ces changements avant de lancer : 
-Il faut se rendre sur le fichier src/main/resources/application.properties et changer : 
+Pour la partie 3 - Spring Boot il faut installer la branche "Spring-Boot" et la télécharger. Ouvrez le fichier téléchargé en tant que projet IntelliJ et faîtes ces changements avant de lancer : 
+Il faut se rendre sur le fichier src/main/resources/application.properties et changez : 
 - spring.datasource.url= (c'est l'URL de connexion à la base de données)
 - spring.datasource.username= (nom d'utilisateur associé à la base de données (souvent root))
 - spring.datasource.password= (mot de passe de l'utilisateur de la base de données)
