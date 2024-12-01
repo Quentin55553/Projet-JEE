@@ -33,3 +33,15 @@ Pour la partie 2 - Hibernate il faut installer la branche "Initial" et la telech
 puis vous ete pret a lancer l'application tomcat - sur la page de login connecter vous sur un admin pour crée des etudiants et professeurs. l'admin de basse est admin.admin@cy-tech.fr mot de pass "admin"
 
 Pour la partie 3 - Springboot if faut installer la branche "Spring-Boot" et la telecharger. Ouvrire le fichier telecharger en tand que projet intelji eet faire ces changement avant de lancer : 
+Il fait se rendre sur le fichier src/main/resources/application.properties et changer : 
+-spring.datasource.url= (c'est l'url de connexion à la BDD
+-spring.datasource.username= (nom d'utilisateur associé à la bdd souvgent c'est root)
+-spring.datasource.password= (mot de passe de l'utilisateur de la bdd)
+-spring.mail.username= (email)
+-spring.mail.password= (mot de passe du mail pour un compte google à double authentification il faut générer un mot de passe d'application)
+
+Ensuite pour lancer l'app il faut se rendre à l'url : http://localhost:8080/login.
+
+
+
+
