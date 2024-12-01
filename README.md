@@ -22,3 +22,14 @@ Cette application est déployée sur un serveur Apache Tomcat et sa deuxième ve
 <div align="center">
   <img src="img/platform_presentation.gif" />
 </div>
+
+
+## 📋 Utilisation
+
+Pour la partie 2 - Hibernate il faut installer la branche "Initial" et la telecharger. Ouvrire le fichier telecharger en tand que projet intelji eet faire ces changement avant de lancer : 
+- ajouter une version de tomcat
+- changer dans src/main/ressource/hibernate.cfg.xml (changer l'identifiant et mot de passe pour acceder a la base de donnee)
+- si vous voulais une base de donner rempli exectuer le code dans SQL.txt dans la branche README
+puis vous ete pret a lancer l'application tomcat - sur la page de login connecter vous sur un admin pour crée des etudiants et professeurs. l'admin de basse est admin.admin@cy-tech.fr mot de pass "admin"
+
+Pour la partie 3 - Springboot if faut installer la branche "Spring-Boot" et la telecharger. Ouvrire le fichier telecharger en tand que projet intelji eet faire ces changement avant de lancer : 
