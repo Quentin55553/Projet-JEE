@@ -30,18 +30,14 @@ Pour la partie 2 - Hibernate il faut installer la branche "Initial" et la télé
 - Ajouter une version d'Apache Tomcat
 - Changer dans src/main/ressource/hibernate.cfg.xml (changer l'identifiant et le mot de passe pour accéder à la base de données)
 - Si vous voulez une base de données remplie exéctuez le code dump.sql présent dans la branche README
-Vous êtes désormais prêt à lancer l'application tomcat - sur la page de login connecter vous sur un admin pour crée des etudiants et professeurs. l'admin de basse est admin.admin@cy-tech.fr mot de pass "admin"
+Vous êtes désormais prêt à lancer l'application Tomcat - sur la page de login connectez-vous en tant qu'administrateur pour créer des étudiants et professeurs. L'administrateur de base est 'admin.admin@cy-tech.fr' avec pour mot de passe 'admin'
 
-Pour la partie 3 - Springboot if faut installer la branche "Spring-Boot" et la telecharger. Ouvrire le fichier telecharger en tand que projet intelji eet faire ces changement avant de lancer : 
-Il fait se rendre sur le fichier src/main/resources/application.properties et changer : 
-- spring.datasource.url= (c'est l'url de connexion à la BDD
-- spring.datasource.username= (nom d'utilisateur associé à la bdd souvgent c'est root)
-- spring.datasource.password= (mot de passe de l'utilisateur de la bdd)
+Pour la partie 3 - Spring Boot if faut installer la branche "Spring-Boot" et la télécharger. Ouvrir le fichier téléchargé en tant que projet IntelliJ et faire ces changements avant de lancer : 
+Il faut se rendre sur le fichier src/main/resources/application.properties et changer : 
+- spring.datasource.url= (c'est l'URL de connexion à la base de données)
+- spring.datasource.username= (nom d'utilisateur associé à la base de données (souvent root))
+- spring.datasource.password= (mot de passe de l'utilisateur de la base de données)
 - spring.mail.username= (email)
-- spring.mail.password= (mot de passe du mail pour un compte google à double authentification il faut générer un mot de passe d'application)
+- spring.mail.password= (mot de passe du mail pour un compte Google à double authentification, il faut générer un mot de passe d'application)
 
-Ensuite pour lancer l'app il faut se rendre à l'url : http://localhost:8080/login.
-
-
-
-
+Ensuite pour lancer l'application, il faut se rendre sur l'URL : http://localhost:8080/login
