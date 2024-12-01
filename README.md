@@ -20,6 +20,5 @@ Cette application est déployée sur un serveur Apache Tomcat et sa deuxième ve
 ### 👀 Aperçu
 
 <div align="center">
-  Gif de présentation du projet
-  <img src="img/.gif" />
+  <img src="img/platform_presentation.gif" />
 </div>
