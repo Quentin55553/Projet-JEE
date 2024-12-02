@@ -24,12 +24,10 @@ public class Inscription {
     @JoinColumn(name = "id_etudiant", referencedColumnName = "id_personne")
     private Personne personneByIdEtudiant;
 
-    // Remplacer le ManyToMany par ManyToOne
     @ManyToOne
-    @JoinColumn(name = "id_cours") // La clé étrangère vers la table Cours
+    @JoinColumn(name = "id_cours") 
     private Cours cours;
 
-    // Getters et setters
     public int getIdInscription() {
         return idInscription;
     }
