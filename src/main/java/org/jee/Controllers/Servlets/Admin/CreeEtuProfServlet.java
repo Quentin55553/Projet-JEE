@@ -50,8 +50,8 @@ public class CreeEtuProfServlet extends HttpServlet {
             personne.setPrenom(prenom);
             personne.setDateNaissance(Date.valueOf(dateNaissance));
             personne.setPassword(motDePasse);
-            personne.setRole(Integer.parseInt(role)); // Vous pouvez ajuster le rôle selon vos besoins
-            personne.setIdPersonne(id_personne); // Utilisation de l'email comme identifiant
+            personne.setRole(Integer.parseInt(role)); 
+            personne.setIdPersonne(id_personne);
             personne.setContact(contact);
 
             // Sauvegarde de la personne dans la base de données
@@ -60,7 +60,6 @@ public class CreeEtuProfServlet extends HttpServlet {
             // Validation de la transaction
             tx.commit();
 
-            // Affichage du résultat
             response.setContentType("text/html");
             response.sendRedirect("Vue/Admin/menu_admin.jsp");
 
@@ -68,7 +67,6 @@ public class CreeEtuProfServlet extends HttpServlet {
             if (tx != null) {
                 tx.rollback();
             }
-            // Message en cas de contrainte violée (id_personne unique)
             response.sendRedirect("Vue/Admin/adminErreur.jsp");
         } catch (Exception e) {
             if (tx != null) {
