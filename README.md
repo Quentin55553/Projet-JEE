@@ -40,5 +40,6 @@ Il faut se rendre sur le fichier src/main/resources/application.properties et ch
 - spring.datasource.password= (mot de passe de l'utilisateur de la base de données)
 - spring.mail.username= (email)
 - spring.mail.password= (mot de passe du mail pour un compte Google à double authentification, il faut générer un mot de passe d'application)
-- Il faut exécuter le script sql pour faire le prmeier admin le mot de passe est admin et le mail est admin.admin@cy-tech.fr
+
+Il faut ensuite exécuter le script SQL pour créer le premier administrateur dont le mot de passe est 'admin' et l'email 'admin.admin@cy-tech.fr'.
 Ensuite pour lancer l'application, il faut se rendre sur l'URL : http://localhost:8080/login
