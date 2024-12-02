@@ -19,12 +19,11 @@ import java.util.List;
 public class Servlet_Debut_Note_Prof extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Récupérer l'ID de l'utilisateur connecté depuis la session
         Personne user = (Personne) request.getSession().getAttribute("user");
         String idEnseignant = user.getIdPersonne();
 
         if (idEnseignant == null) {
-            response.sendRedirect("login.jsp"); // Redirection si pas connecté
+            response.sendRedirect("login.jsp"); 
             return;
         }
 
@@ -32,7 +31,6 @@ public class Servlet_Debut_Note_Prof extends HttpServlet {
             // Démarrer une transaction pour une gestion sûre
             session.beginTransaction();
 
-            // Requête pour récupérer l'enseignant (Personne)
             Query<Personne> query2 = session.createQuery("FROM Personne WHERE idPersonne = :idEnseignant", Personne.class);
             query2.setParameter("idEnseignant", idEnseignant);
 
@@ -48,11 +46,9 @@ public class Servlet_Debut_Note_Prof extends HttpServlet {
 
             List<Cours> coursList = query.list();
 
-            // Transférer la liste des cours à la JSP
             request.setAttribute("coursList", coursList);
             request.getRequestDispatcher("Vue/Professeur/saisieNotes_Professeur.jsp").forward(request, response);
 
-            // Commit transaction
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
