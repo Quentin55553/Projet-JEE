@@ -34,7 +34,6 @@ public class Cours {
     @Expose
     private Personne personneByIdEnseignant;
 
-    // Relation OneToMany avec Inscription
     @OneToMany(mappedBy = "cours", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Inscription> inscriptions;
 
